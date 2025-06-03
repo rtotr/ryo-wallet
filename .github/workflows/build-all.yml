@@ -1,0 +1,13 @@
+name: workflows/build-all
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  build-linux:
+    uses: ./.github/workflows/build-linux.yml
+#   build-mac:
+#     uses: ./.github/workflows/build-mac.yml
+#   build-win:
+#     uses: ./.github/workflows/build-win.yml

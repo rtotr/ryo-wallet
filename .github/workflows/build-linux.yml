@@ -1,0 +1,33 @@
+name: workflows/build-linux
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  build-linux:
+    name: 'Ubuntu (AppImage)'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - name: get latest ryo release tag
+        run: echo "LATEST_TAG=$(gh release list --repo rtotr/ryo-currency --json tagName,isLatest --jq '.[] | select(.isLatest)|.tagName')" >> $GITHUB_ENV
+      - name: download latest ryo release
+        run: gh release download --repo rtotr/ryo-currency --dir bin --pattern ryo-*-linux-x64.tar.xz
+      - name: unpack ryo archive
+        run: |
+          tar xf ryo-${{ env.LATEST_TAG }}-linux-x64.tar.xz
+          rm ryo-${{ env.LATEST_TAG }}-linux-x64.tar.xz
+          find . -type f
+        working-directory: bin
+      - name: npm install
+        run: npm install
+      - name: build
+        run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.job }} # job names must start with 'build-' for the release workflow to work correctly
+          path: dist/electron/Packaged/ryo-wallet-linux-x64.AppImage
