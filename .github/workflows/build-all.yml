@@ -9,5 +9,5 @@ jobs:
     uses: ./.github/workflows/build-linux.yml
 #   build-mac:
 #     uses: ./.github/workflows/build-mac.yml
-#   build-win:
-#     uses: ./.github/workflows/build-win.yml
+  build-win:
+    uses: ./.github/workflows/build-win.yml
