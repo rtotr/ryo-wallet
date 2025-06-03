@@ -6,7 +6,7 @@ module.exports = function (ctx) {
         plugins: [
             "i18n",
             "axios",
-	    "vuelidate",
+        "vuelidate",
             "gateway",
             "timeago"
         ],
@@ -205,7 +205,8 @@ module.exports = function (ctx) {
 
                 appId: "com.ryo-currency.wallet",
                 productName: "Ryo Wallet Atom",
-                copyright: "Copyright © 2022 Ryo Currency Project",
+                artifactName: 'ryo-wallet.${ext}',
+                copyright: "Copyright © 2025 Ryo Currency Project",
 
                 // directories: {
                 //     buildResources: "src-electron/build"
@@ -214,17 +215,20 @@ module.exports = function (ctx) {
                 linux: {
                     target: ["AppImage"],
                     icon: "src-electron/icons/icon_512x512.png",
+                    artifactName: 'ryo-wallet-linux-x64.${ext}',
                     category: "Finance"
                 },
 
                 win: {
                     target: ["zip"],
+                    artifactName: 'ryo-wallet-win-x64-setup.${ext}',
                     icon: "src-electron/icons/icon.ico"
                 },
 
                 mac: {
                     target: ["dmg"],
                     icon: "src-electron/icons/icon.icns",
+                    artifactName: 'ryo-wallet-mac-arm64.${ext}',
                     category: "public.app-category.finance"
                 },
 
