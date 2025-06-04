@@ -38,6 +38,13 @@ jobs:
           Remove-Item ryo-${{ env.LATEST_TAG }}-win-x64.7z
           Get-ChildItem -Path . -File -Name
         working-directory: bin
+      - name: update versions in packages.json
+        if: github.ref_type == 'tag'
+        run: |
+          $content = Get-Content package.json -Raw | ConvertFrom-Json
+          $content.version = "${{ github.ref_name }}"
+          $content.daemonVersion = "${{ env.LATEST_TAG }}"
+          $content | ConvertTo-Json -Depth 32 | Set-Content package.json
       - name: npm install
         run: npm install
       - name: build
