@@ -55,7 +55,9 @@ jobs:
         run: |
           New-Item -ItemType Directory -Force -Path temp_extract
           7z x dist/electron-mat/Packaged/ryo-wallet-win-x64.zip -otemp_extract
-          7z a -t7z dist/electron-mat/Packaged/ryo-wallet-win-x64.7z temp_extract/*
+          Set-Location temp_extract
+          7z a -t7z ../dist/electron-mat/Packaged/ryo-wallet-win-x64.7z *
+          Set-Location ..
           Remove-Item -Recurse -Force temp_extract
           Remove-Item dist/electron-mat/Packaged/ryo-wallet-win-x64.zip
       - uses: actions/upload-artifact@v4
