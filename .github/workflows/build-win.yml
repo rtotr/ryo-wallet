@@ -34,7 +34,7 @@ jobs:
         run: gh release download --repo rtotr/ryo-currency --dir bin --pattern ryo-*-win-x64.7z
       - name: unpack ryo archive
         run: |
-          7z x ryo-${{ env.LATEST_TAG }}-win-x64.7z
+          7z x ryo-${{ env.LATEST_TAG }}-win-x64.7z ryod.exe ryo-wallet-rpc.exe
           Remove-Item ryo-${{ env.LATEST_TAG }}-win-x64.7z
           Get-ChildItem -Path . -File -Name
         working-directory: bin
