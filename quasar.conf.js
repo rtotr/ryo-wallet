@@ -221,7 +221,7 @@ module.exports = function (ctx) {
 
                 win: {
                     target: ["zip"],
-                    artifactName: 'ryo-wallet-win-x64-setup.${ext}',
+                    artifactName: 'ryo-wallet-win-x64.${ext}',
                     icon: "src-electron/icons/icon.ico"
                 },
 
