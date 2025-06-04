@@ -46,7 +46,7 @@
                 <img class="q-mb-md" src="statics/ryo-wallet.svg" height="42" />
 
                 <p class="q-my-sm">Version: ATOM v{{version}}-v{{daemonVersion}}</p>
-                <p class="q-my-sm">Copyright (c) 2022, Ryo Currency Project</p>
+                <p class="q-my-sm">Copyright (c) 2025, Ryo Currency Project</p>
                 <p class="q-my-sm">All rights reserved.</p>
 
                 <div class="q-mt-md q-mb-lg external-links">
@@ -58,7 +58,7 @@
                         <a @click="openExternal('https://discord.gg/GFQmFtx')" href="#">Discord</a> -
                         <a @click="openExternal('https://www.reddit.com/r/ryocurrency/')" href="#">Reddit</a> -
                         <a @click="openExternal('https://twitter.com/RyocurrencyO')" href="#">Twitter</a> -
-                        <a @click="openExternal('https://bitcointalk.org/index.php?topic=4413010.0')" href="#">Bitcointalk</a> -
+                        <a @click="openExternal('https://www.facebook.com/RyoCurrency/')" href="#">Facebook</a> -
                         <a @click="openExternal('https://github.com/ryo-currency')" href="#">Github</a>
                     </p>
                 </div>
