@@ -47,4 +47,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ github.job }} # job names must start with 'build-' for the release workflow to work correctly
-          path: dist/electron-mat/Packaged/ryo-wallet-win-x64-setup.exe
+          path: dist/electron-mat/Packaged/ryo-wallet-win-x64-setup.zip
