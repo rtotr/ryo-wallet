@@ -25,7 +25,7 @@ jobs:
           node-version: '12.22.12'
       - name: install vs 2017 build tools
         run: |
-          choco install --no-progress -y visualstudio2017buildtools
+          choco install --no-progress -y visualstudio2017buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.MSBuildTools;includeRecommended --add Microsoft.VisualStudio.Workload.VCTools;includeRecommended --add Microsoft.VisualStudio.Component.VC.140"
       - name: get latest ryo release tag
         run: |
           $L_TAG = & gh release list --repo rtotr/ryo-currency --json tagName,isLatest --jq '.[] | select(.isLatest)|.tagName'
