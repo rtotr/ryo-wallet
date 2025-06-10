@@ -34,6 +34,12 @@ jobs:
         with:
           install: |
             Mac::Finder::DSStore
+      - name: another perl module install attempt
+        run: |
+          perl -V
+          brew install --quiet cpanminus
+          cpanm --version
+          cpanm Mac::Finder::DSStore
       - name: get latest ryo release tag
         run: echo "LATEST_TAG=$(gh release list --repo rtotr/ryo-currency --json tagName,isLatest --jq '.[] | select(.isLatest)|.tagName')" >> $GITHUB_ENV
       - name: download latest ryo release
