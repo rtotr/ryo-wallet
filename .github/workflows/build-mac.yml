@@ -29,6 +29,11 @@ jobs:
         with:
           node-version: '12.22.12'
           architecture: 'x64'
+      - name: install cpanm and Mac::Finder::DSStore
+        uses: perl-actions/install-with-cpanm@v1
+        with:
+          install: |
+            Mac::Finder::DSStore
       - name: get latest ryo release tag
         run: echo "LATEST_TAG=$(gh release list --repo rtotr/ryo-currency --json tagName,isLatest --jq '.[] | select(.isLatest)|.tagName')" >> $GITHUB_ENV
       - name: download latest ryo release
