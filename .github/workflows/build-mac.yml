@@ -37,7 +37,7 @@ jobs:
       - name: another perl module install attempt
         run: |
           perl -V
-          brew install --queit cpanminus
+          brew install --quiet cpanminus
           cpanm --version
           cpanm Mac::Finder::DSStore
       - name: get latest ryo release tag
