@@ -29,11 +29,6 @@ jobs:
         with:
           node-version: '14.21.3'
           architecture: 'x64'
-      # - name: install cpanm and Mac::Finder::DSStore
-      #   uses: perl-actions/install-with-cpanm@v1
-      #   with:
-      #     install: |
-      #       Mac::Finder::DSStore
       # - name: remove default perl
       #   run: |
       #     which perl
