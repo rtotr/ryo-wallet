@@ -1,6 +1,12 @@
 name: workflows/build-linux
 
 on:
+  push:
+    branches:
+      - dev-github-actions-quasar-upgrade
+    paths:
+      - '**/*.yml'
+      - '**/*.json'
   workflow_call:
   workflow_dispatch:
 
