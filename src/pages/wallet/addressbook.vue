@@ -16,14 +16,14 @@
         <q-list link no-border :dark="theme=='dark'">
 
             <q-item v-for="(entry, index) in address_book_starred" @click.native="details(entry)">
-                <q-item-side>
+                <q-item-section>
                     <Identicon :address="entry.address" :ref="`${index}-starredIdenticon`" />
-                </q-item-side>
+                </q-item-section>
                 <q-item-label>
                     <q-item-tile class="monospace ellipsis" label>{{ entry.address }}</q-item-tile>
                     <q-item-tile sublabel>{{ entry.name }}</q-item-tile>
                 </q-item-label>
-                <q-item-side>
+                <q-item-section>
                     <q-btn
                         color="primary" style="width:25px; margin-right: 10px;"
                         size="sm" icon="call_made"
@@ -34,7 +34,7 @@
                         </q-tooltip>
                     </q-btn>
                     <q-icon size="24px" name="star" />
-                </q-item-side>
+                </q-item-section>
 
                 <q-context-menu>
                     <q-list link separator style="min-width: 150px; max-height: 300px;">
@@ -62,14 +62,14 @@
 
             </q-item>
             <q-item v-for="(entry, index) in address_book" @click.native="details(entry)">
-                <q-item-side>
+                <q-item-section>
                     <Identicon :address="entry.address" :ref="`${index}-normalIdenticon`" />
-                </q-item-side>
+                </q-item-section>
                 <q-item-label>
                     <q-item-tile class="monospace ellipsis" label>{{ entry.address }}</q-item-tile>
                     <q-item-tile sublabel>{{ entry.name }}</q-item-tile>
                 </q-item-label>
-                <q-item-side>
+                <q-item-section>
                     <q-btn
                         color="primary" style="width:25px; margin-right: 10px;"
                         size="sm" icon="call_made"
@@ -80,7 +80,7 @@
                         </q-tooltip>
                     </q-btn>
                     <q-icon size="24px" name="star_border" />
-                </q-item-side>
+                </q-item-section>
 
                 <q-context-menu>
                     <q-list link separator style="min-width: 150px; max-height: 300px;">

@@ -583,9 +583,9 @@
                                             <div class="text"><span>Mined To</span></div>
                                             <div class="value">
                                                 <q-item class="q-px-none">
-                                                    <q-item-side>
+                                                    <q-item-section>
                                                         <Identicon :address="block.minedTo" ref="identicon" />
-                                                    </q-item-side>
+                                                    </q-item-section>
                                                     <q-item-label>
                                                         <q-item-tile label>{{ block.minedToName }}</q-item-tile>
                                                         <q-item-tile class="monospace ellipsis" sublabel>{{ block.minedTo }}</q-item-tile>

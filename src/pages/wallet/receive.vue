@@ -16,14 +16,14 @@
 
         <q-item-label header>My primary address</q-item-label>
         <q-item v-for="(address, index) in address_list.primary" @click.native="details(address)">
-            <q-item-side>
+            <q-item-section>
                 <Identicon :address="address.address" ref="primaryIdenticon" />
-            </q-item-side>
+            </q-item-section>
             <q-item-label>
                 <q-item-tile class="monospace ellipsis" label>{{ address.address }}</q-item-tile>
                 <q-item-tile sublabel>Primary address</q-item-tile>
             </q-item-label>
-            <q-item-side>
+            <q-item-section>
                 <q-btn
                     color="primary" style="width:25px;"
                     size="sm" icon="file_copy"
@@ -32,7 +32,7 @@
                         Copy address
                     </q-tooltip>
                 </q-btn>
-            </q-item-side>
+            </q-item-section>
 
             <q-context-menu>
                 <q-list link separator style="min-width: 150px; max-height: 300px;">
@@ -58,14 +58,14 @@
         <template v-if="address_list.used.length">
             <q-item-label header>My used addresses</q-item-label>
             <q-item v-for="(address, index) in address_list.used" @click.native="details(address)">
-                <q-item-side>
+                <q-item-section>
                     <Identicon :address="address.address" :ref="`${index}-usedIdenticon`" />
-                </q-item-side>
+                </q-item-section>
                 <q-item-label>
                     <q-item-tile class="monospace ellipsis" label>{{ address.address }}</q-item-tile>
                     <q-item-tile sublabel>Sub-address (Index {{ address.address_index }})</q-item-tile>
                 </q-item-label>
-                <q-item-side>
+                <q-item-section>
                     <q-btn
                         color="primary" style="width:25px;"
                         size="sm" icon="file_copy"
@@ -74,7 +74,7 @@
                             Copy address
                         </q-tooltip>
                     </q-btn>
-                </q-item-side>
+                </q-item-section>
 
                 <q-context-menu>
                     <q-list link separator style="min-width: 150px; max-height: 300px;">
@@ -102,14 +102,14 @@
         <template v-if="address_list.unused.length">
             <q-item-label header>My unused addresses</q-item-label>
             <q-item v-for="(address, index) in address_list.unused" @click.native="details(address)">
-                <q-item-side>
+                <q-item-section>
                     <Identicon :address="address.address" :ref="`${index}-unusedIdenticon`" />
-                </q-item-side>
+                </q-item-section>
                 <q-item-label>
                     <q-item-tile class="monospace ellipsis" label>{{ address.address }}</q-item-tile>
                     <q-item-tile sublabel>Sub-address (Index {{ address.address_index }})</q-item-tile>
                 </q-item-label>
-                <q-item-side>
+                <q-item-section>
                     <q-btn
                         color="primary" style="width:25px;"
                         size="sm" icon="file_copy"
@@ -118,7 +118,7 @@
                             Copy address
                         </q-tooltip>
                     </q-btn>
-                </q-item-side>
+                </q-item-section>
 
                 <q-context-menu>
                     <q-list link separator style="min-width: 150px; max-height: 300px;">

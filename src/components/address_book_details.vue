@@ -20,9 +20,9 @@
             <q-list no-border :dark="theme=='dark'">
 
                 <q-item>
-                    <q-item-side>
+                    <q-item-section>
                         <Identicon :address="newEntry.address" menu />
-                    </q-item-side>
+                    </q-item-section>
                     <q-item-label>
                         <q-field>
                             <q-input v-model="newEntry.address" float-label="Address"
@@ -40,14 +40,14 @@
                             <q-input v-model="newEntry.name" float-label="Name" :dark="theme=='dark'" />
                         </q-field>
                     </q-item-label>
-                    <q-item-side>
+                    <q-item-section>
                         <q-checkbox
                             v-model="newEntry.starred"
                             checked-icon="star"
                             unchecked-icon="star_border"
                             class="star-entry"
                             />
-                    </q-item-side>
+                    </q-item-section>
                 </q-item>
 
                 <q-item>

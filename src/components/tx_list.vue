@@ -10,14 +10,14 @@
             <q-list link no-border :dark="theme=='dark'" class="tx-list">
                 <q-item v-for="(tx, index) in tx_list_paged" :key="tx.txid"
                         @click.native="details(tx)" :class="'tx-'+tx.type">
-                    <q-item-side>
+                    <q-item-section>
                         <TxTypeIcon :type="tx.type" />
-                    </q-item-side>
+                    </q-item-section>
                     <q-item-label>
                         <q-item-tile class="monospace ellipsis" label>{{ tx.txid }}</q-item-tile>
                         <q-item-tile sublabel>{{ formatHeight(tx) }}</q-item-tile>
                     </q-item-label>
-                    <q-item-side>
+                    <q-item-section>
                         <q-item-tile label>
                             <FormatRyo :amount="tx.amount" />
                         </q-item-tile>
@@ -25,7 +25,7 @@
                             <timeago :datetime="tx.timestamp*1000" :auto-update="60">
                             </timeago>
                         </q-item-tile>
-                    </q-item-side>
+                    </q-item-section>
 
                     <q-context-menu>
                         <q-list link separator style="min-width: 150px; max-height: 300px;">

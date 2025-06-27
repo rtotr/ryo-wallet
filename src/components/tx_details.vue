@@ -85,9 +85,9 @@
                 <q-list no-border>
                     <q-item-label header class="q-px-none">Incoming transaction sent to:</q-item-label>
                     <q-item class="q-px-none">
-                        <q-item-side>
+                        <q-item-section>
                             <Identicon :address="in_tx_address_used.address" ref="identicon" />
-                        </q-item-side>
+                        </q-item-section>
                         <q-item-label>
                             <q-item-tile label>{{ in_tx_address_used.address_index_text }}</q-item-tile>
                             <q-item-tile class="monospace ellipsis" sublabel>{{ in_tx_address_used.address }}</q-item-tile>
@@ -116,9 +116,9 @@
                     <q-item-label header class="q-px-none">Outgoing transaction sent to:</q-item-label>
                     <template v-if="out_destinations">
                         <q-item class="q-px-none" v-for="destination in out_destinations">
-                            <q-item-side>
+                            <q-item-section>
                                 <Identicon :address="destination.address" ref="identicon" />
-                            </q-item-side>
+                            </q-item-section>
                             <q-item-label>
                                 <q-item-tile label>{{ destination.name }}</q-item-tile>
                                 <q-item-tile class="monospace ellipsis" sublabel>{{ destination.address }}</q-item-tile>
@@ -143,9 +143,9 @@
                     </template>
                     <template v-else>
                         <q-item class="q-px-none">
-                            <q-item-side>
+                            <q-item-section>
                                 <Identicon address="" />
-                            </q-item-side>
+                            </q-item-section>
                             <q-item-label>
                                 <q-item-tile label>Destination unknown</q-item-tile>
                             </q-item-label>

@@ -1,15 +1,15 @@
 <template>
 <q-item class="address-header">
-    <q-item-side>
+    <q-item-section>
         <Identicon :address="address" :size="12" ref="identicon" />
-    </q-item-side>
+    </q-item-section>
     <q-item-label class="self-start">
         <q-item-tile label>{{ title }}</q-item-tile>
         <q-item-tile class="monospace break-all" sublabel>{{ address }}</q-item-tile>
         <q-item-tile v-if="payment_id" sublabel>Payment id: {{ payment_id }}</q-item-tile>
         <q-item-tile v-if="extra" sublabel>{{ extra }}</q-item-tile>
     </q-item-label>
-    <q-item-side>
+    <q-item-section>
         <q-btn
             color="primary" style="width:25px;"
             size="sm" icon="file_copy"
@@ -20,7 +20,7 @@
             </q-tooltip>
         </q-btn>
 
-    </q-item-side>
+    </q-item-section>
 
     <q-context-menu>
         <q-list link separator style="min-width: 150px; max-height: 300px;">

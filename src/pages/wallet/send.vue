@@ -52,9 +52,9 @@
             </div>
 
             <q-item class="q-pa-none">
-                <q-item-side>
+                <q-item-section>
                     <Identicon :address="newTx.address" menu />
-                </q-item-side>
+                </q-item-section>
                 <q-item-label>
                     <q-field>
                         <q-input v-model="newTx.address" float-label="Address"

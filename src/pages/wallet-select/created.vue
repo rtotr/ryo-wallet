@@ -17,7 +17,7 @@
             <div class="col" v-else>
                 {{ secret.mnemonic }}
             </div>
-            <div class="q-item-side">
+            <div class="q-item-section">
                 <q-btn
                     v-bind:class="{ invisible: mnemonic_words_confirm.length }"
                     color="primary" style="width:25px;"
@@ -37,7 +37,7 @@
             <div class="col" style="word-break:break-all;">
                 {{ secret.view_key }}
             </div>
-            <div class="q-item-side">
+            <div class="q-item-section">
                 <q-btn
                     color="primary" style="width:25px;"
                     size="sm" icon="file_copy"
@@ -56,7 +56,7 @@
             <div class="col" style="word-break:break-all;">
                 {{ secret.spend_key }}
             </div>
-            <div class="q-item-side">
+            <div class="q-item-section">
                 <q-btn
                     color="primary" style="width:25px;"
                     size="sm" icon="file_copy"
