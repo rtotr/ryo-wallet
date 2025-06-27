@@ -83,7 +83,7 @@
 
             <div v-if="tx.type=='in' || tx.type=='pool'">
                 <q-list no-border>
-                    <q-list-header class="q-px-none">Incoming transaction sent to:</q-list-header>
+                    <q-item-label header class="q-px-none">Incoming transaction sent to:</q-item-label>
                     <q-item class="q-px-none">
                         <q-item-side>
                             <Identicon :address="in_tx_address_used.address" ref="identicon" />
@@ -113,7 +113,7 @@
 
             <div v-else-if="tx.type=='out' || tx.type=='pending'">
                 <q-list no-border>
-                    <q-list-header class="q-px-none">Outgoing transaction sent to:</q-list-header>
+                    <q-item-label header class="q-px-none">Outgoing transaction sent to:</q-item-label>
                     <template v-if="out_destinations">
                         <q-item class="q-px-none" v-for="destination in out_destinations">
                             <q-item-side>

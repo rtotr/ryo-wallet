@@ -14,7 +14,7 @@
 
     <q-list link no-border :dark="theme=='dark'">
 
-        <q-list-header>My primary address</q-list-header>
+        <q-item-label header>My primary address</q-item-label>
         <q-item v-for="(address, index) in address_list.primary" @click.native="details(address)">
             <q-item-side>
                 <Identicon :address="address.address" ref="primaryIdenticon" />
@@ -56,7 +56,7 @@
         </q-item>
 
         <template v-if="address_list.used.length">
-            <q-list-header>My used addresses</q-list-header>
+            <q-item-label header>My used addresses</q-item-label>
             <q-item v-for="(address, index) in address_list.used" @click.native="details(address)">
                 <q-item-side>
                     <Identicon :address="address.address" :ref="`${index}-usedIdenticon`" />
@@ -100,7 +100,7 @@
 
 
         <template v-if="address_list.unused.length">
-            <q-list-header>My unused addresses</q-list-header>
+            <q-item-label header>My unused addresses</q-item-label>
             <q-item v-for="(address, index) in address_list.unused" @click.native="details(address)">
                 <q-item-side>
                     <Identicon :address="address.address" :ref="`${index}-unusedIdenticon`" />

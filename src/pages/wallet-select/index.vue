@@ -11,7 +11,7 @@
 
     <q-list link no-border :dark="theme=='dark'">
         <template v-if="wallets.list.length">
-            <q-list-header>Open wallet</q-list-header>
+            <q-item-label header>Open wallet</q-item-label>
             <q-item v-for="(wallet, index) in wallets.list" @click.native="openWallet(wallet)">
                 <q-item-side>
                     <Identicon :address="wallet.address" :ref="`${index}-identicon`" />
