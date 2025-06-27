@@ -2,7 +2,7 @@
     <div>
         <q-btn class="menu" label="" size="md" flat>
             <q-icon name="menu" />
-            <q-popover>
+            <q-menu>
                 <q-list separator link>
                     <q-item v-close-overlay @click.native="switchWallet" v-if="!disableSwitchWallet">
                         <q-item-main>
@@ -35,7 +35,7 @@
                         </q-item-main>
                     </q-item>
                 </q-list>
-            </q-popover>
+            </q-menu>
 
         </q-btn>
         <settings-modal ref="settingsModal" />

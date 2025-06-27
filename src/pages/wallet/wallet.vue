@@ -26,7 +26,7 @@
         <div class="col text-right q-mr-sm">
             <div class="infoBox q-pt-md">
                 <q-btn icon-right="more_vert" label="Wallet actions" size="md" flat>
-                    <q-popover anchor="bottom right" self="top right">
+                    <q-menu anchor="bottom right" self="top right">
                         <q-list separator link>
                             <q-item :disabled="!is_ready"
                                     v-close-overlay @click.native="getPrivateKeys()">
@@ -59,7 +59,7 @@
                                 </q-item-main>
                             </q-item>
                         </q-list>
-                    </q-popover>
+                    </q-menu>
                 </q-btn>
             </div>
         </div>
