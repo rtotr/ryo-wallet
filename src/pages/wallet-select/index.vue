@@ -51,7 +51,7 @@
                 </q-context-menu>
 
             </q-item>
-            <q-item-separator />
+            <q-separator />
         </template>
         <q-item @click.native="createNewWallet()">
             <q-item-side>
