@@ -1,6 +1,6 @@
 <template>
 <q-dialog v-model="isVisible" maximized>
-    <q-modal-layout>
+    <q-layout>
         <q-toolbar slot="header" color="dark" inverted>
             <q-btn
                 flat
@@ -170,7 +170,7 @@
 
         </div>
 
-    </q-modal-layout>
+    </q-layout>
 
 </q-dialog>
 </template>

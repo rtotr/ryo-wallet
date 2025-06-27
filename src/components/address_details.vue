@@ -1,6 +1,6 @@
 <template>
 <q-dialog v-model="isVisible" maximized>
-    <q-modal-layout>
+    <q-layout>
         <q-toolbar slot="header" color="dark" inverted>
             <q-btn
                 flat
@@ -96,7 +96,7 @@
 
         </div>
 
-    </q-modal-layout>
+    </q-layout>
 
     <template v-if="address != null">
         <q-dialog v-model="isQRCodeVisible" minimized :content-css="{padding: '25px'}">

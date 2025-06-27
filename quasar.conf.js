@@ -74,7 +74,7 @@ module.exports = function (ctx) {
         'QBtnDropdown',
         'QMenu',
         'QDialog',
-        'QModalLayout',
+        'QLayout',
         'QStep',
         'QStepper',
         'QStepperNavigation',

@@ -1,7 +1,7 @@
 <template>
 <q-dialog v-model="isVisible" maximized class="address-book-details">
 
-    <q-modal-layout v-if="mode == 'edit' || mode == 'new'">
+    <q-layout v-if="mode == 'edit' || mode == 'new'">
         <q-toolbar slot="header" color="dark" inverted>
             <q-btn flat round dense icon="reply" @click="close()" />
             <q-toolbar-title v-if="mode=='new'">
@@ -82,9 +82,9 @@
 
             </q-list>
         </div>
-    </q-modal-layout>
+    </q-layout>
 
-    <q-modal-layout v-else>
+    <q-layout v-else>
         <q-toolbar slot="header" color="dark" inverted>
             <q-btn flat round dense icon="reply" @click="close()" />
             <q-toolbar-title>
@@ -126,7 +126,7 @@
             </template>
 
         </div>
-    </q-modal-layout>
+    </q-layout>
 
 
 </q-dialog>

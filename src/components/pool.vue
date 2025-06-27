@@ -1,6 +1,6 @@
 <template>
 <q-dialog v-model="isVisible" maximized class="pool-modal">
-    <q-modal-layout>
+    <q-layout>
         <q-toolbar slot="header" color="dark" inverted>
             <q-btn flat round dense @click="isVisible = false" icon="reply" />
             <q-toolbar-title shrink>
@@ -563,7 +563,7 @@
 
                 <q-dialog maximized v-model="modals.block">
 
-                    <q-modal-layout>
+                    <q-layout>
                         <q-toolbar slot="header" color="dark" inverted>
                             <q-btn flat round dense @click="modals.block = false" icon="reply" />
                             <q-toolbar-title>
@@ -721,13 +721,13 @@
                             </div>
 
                         </div>
-                    </q-modal-layout>
+                    </q-layout>
                 </q-dialog>
 
             </div>
         </div>
 
-    </q-modal-layout>
+    </q-layout>
 
 </q-dialog>
 </template>
