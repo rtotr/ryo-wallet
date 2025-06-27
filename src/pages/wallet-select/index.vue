@@ -16,10 +16,10 @@
                 <q-item-side>
                     <Identicon :address="wallet.address" :ref="`${index}-identicon`" />
                 </q-item-side>
-                <q-item-main>
+                <q-item-label>
                     <q-item-tile label>{{ wallet.name }}</q-item-tile>
                     <q-item-tile class="monospace ellipsis" sublabel>{{ wallet.address }}</q-item-tile>
-                </q-item-main>
+                </q-item-label>
                 <q-item-side>
                     <q-btn
                         color="primary" style="width:25px;"
@@ -35,17 +35,17 @@
                     <q-list link separator style="min-width: 150px; max-height: 300px;">
                         <q-item v-close-overlay
                                 @click.native="openWallet(wallet)">
-                            <q-item-main label="Open wallet" />
+                            <q-item-label label="Open wallet" />
                         </q-item>
 
                         <q-item v-close-overlay
                                 @click.native="copyAddress(wallet.address, $event)">
-                            <q-item-main label="Copy address" />
+                            <q-item-label label="Copy address" />
                         </q-item>
 
                         <q-item v-close-overlay
                                 @click.native="$refs[`${index}-identicon`][0].saveIdenticon()">
-                            <q-item-main label="Save identicon to file" />
+                            <q-item-label label="Save identicon to file" />
                         </q-item>
                     </q-list>
                 </q-context-menu>
@@ -57,32 +57,32 @@
             <q-item-side>
                 <q-icon name="add_circle_outline" size="40px" />
             </q-item-side>
-            <q-item-main label="Create new wallet" />
+            <q-item-label label="Create new wallet" />
         </q-item>
         <q-item @click.native="restoreWallet()">
             <q-item-side>
                 <q-icon name="input" size="40px" />
             </q-item-side>
-            <q-item-main label="Restore wallet from seed" />
+            <q-item-label label="Restore wallet from seed" />
         </q-item>
         <q-item @click.native="restoreViewWallet()">
             <q-item-side>
                 <q-icon name="remove_red_eye" size="40px" />
             </q-item-side>
-            <q-item-main label="Restore view-only wallet" />
+            <q-item-label label="Restore view-only wallet" />
         </q-item>
         <q-item @click.native="importWallet()">
             <q-item-side>
                 <q-icon name="file_copy" size="40px" />
             </q-item-side>
-            <q-item-main label="Import wallet from file" />
+            <q-item-label label="Import wallet from file" />
         </q-item>
         <template v-if="wallets.legacy.length">
             <q-item @click.native="importLegacyWallet()">
                 <q-item-side>
                     <q-icon name="file_copy" size="40px" />
                 </q-item-side>
-                <q-item-main label="Import wallet from legacy gui" />
+                <q-item-label label="Import wallet from legacy gui" />
             </q-item>
         </template>
     </q-list>

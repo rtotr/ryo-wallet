@@ -88,21 +88,21 @@
                         <q-item-side>
                             <Identicon :address="in_tx_address_used.address" ref="identicon" />
                         </q-item-side>
-                        <q-item-main>
+                        <q-item-label>
                             <q-item-tile label>{{ in_tx_address_used.address_index_text }}</q-item-tile>
                             <q-item-tile class="monospace ellipsis" sublabel>{{ in_tx_address_used.address }}</q-item-tile>
-                        </q-item-main>
+                        </q-item-label>
 
                         <q-context-menu>
                             <q-list link separator style="min-width: 150px; max-height: 300px;">
                                 <q-item v-close-overlay
                                         @click.native="copyAddress(in_tx_address_used.address, $event)">
-                                    <q-item-main label="Copy address" />
+                                    <q-item-label label="Copy address" />
                                 </q-item>
 
                                 <q-item v-close-overlay
                                         @click.native="$refs.identicon.saveIdenticon()">
-                                    <q-item-main label="Save identicon to file" />
+                                    <q-item-label label="Save identicon to file" />
                                 </q-item>
                             </q-list>
                         </q-context-menu>
@@ -119,22 +119,22 @@
                             <q-item-side>
                                 <Identicon :address="destination.address" ref="identicon" />
                             </q-item-side>
-                            <q-item-main>
+                            <q-item-label>
                                 <q-item-tile label>{{ destination.name }}</q-item-tile>
                                 <q-item-tile class="monospace ellipsis" sublabel>{{ destination.address }}</q-item-tile>
                                 <q-item-tile sublabel><FormatRyo :amount="destination.amount" /></q-item-tile>
-                            </q-item-main>
+                            </q-item-label>
 
                             <q-context-menu>
                                 <q-list link separator style="min-width: 150px; max-height: 300px;">
                                     <q-item v-close-overlay
                                             @click.native="copyAddress(destination.address, $event)">
-                                        <q-item-main label="Copy address" />
+                                        <q-item-label label="Copy address" />
                                     </q-item>
 
                                     <q-item v-close-overlay
                                             @click.native="$refs.identicon.saveIdenticon()">
-                                        <q-item-main label="Save identicon to file" />
+                                        <q-item-label label="Save identicon to file" />
                                     </q-item>
                                 </q-list>
                             </q-context-menu>
@@ -146,9 +146,9 @@
                             <q-item-side>
                                 <Identicon address="" />
                             </q-item-side>
-                            <q-item-main>
+                            <q-item-label>
                                 <q-item-tile label>Destination unknown</q-item-tile>
-                            </q-item-main>
+                            </q-item-label>
                         </q-item>
                     </template>
                 </q-list>

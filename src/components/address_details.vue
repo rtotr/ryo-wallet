@@ -107,7 +107,7 @@
                 <q-context-menu>
                     <q-list link separator style="min-width: 150px; max-height: 300px;">
                         <q-item v-close-overlay @click.native="saveQR()">
-                            <q-item-main label="Save QR code to file" />
+                            <q-item-label label="Save QR code to file" />
                         </q-item>
                     </q-list>
                 </q-context-menu>

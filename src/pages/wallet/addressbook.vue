@@ -19,10 +19,10 @@
                 <q-item-side>
                     <Identicon :address="entry.address" :ref="`${index}-starredIdenticon`" />
                 </q-item-side>
-                <q-item-main>
+                <q-item-label>
                     <q-item-tile class="monospace ellipsis" label>{{ entry.address }}</q-item-tile>
                     <q-item-tile sublabel>{{ entry.name }}</q-item-tile>
-                </q-item-main>
+                </q-item-label>
                 <q-item-side>
                     <q-btn
                         color="primary" style="width:25px; margin-right: 10px;"
@@ -40,22 +40,22 @@
                     <q-list link separator style="min-width: 150px; max-height: 300px;">
                         <q-item v-close-overlay
                                 @click.native="details(entry)">
-                            <q-item-main label="Show details" />
+                            <q-item-label label="Show details" />
                         </q-item>
 
                         <q-item v-close-overlay
                                 @click.native="sendToAddress(entry, $event)">
-                            <q-item-main label="Send to this address" />
+                            <q-item-label label="Send to this address" />
                         </q-item>
 
                         <q-item v-close-overlay
                                 @click.native="copyAddress(entry, $event)">
-                            <q-item-main label="Copy address" />
+                            <q-item-label label="Copy address" />
                         </q-item>
 
                         <q-item v-close-overlay
                                 @click.native="$refs[`${index}-starredIdenticon`][0].saveIdenticon()">
-                            <q-item-main label="Save identicon to file" />
+                            <q-item-label label="Save identicon to file" />
                         </q-item>
                     </q-list>
                 </q-context-menu>
@@ -65,10 +65,10 @@
                 <q-item-side>
                     <Identicon :address="entry.address" :ref="`${index}-normalIdenticon`" />
                 </q-item-side>
-                <q-item-main>
+                <q-item-label>
                     <q-item-tile class="monospace ellipsis" label>{{ entry.address }}</q-item-tile>
                     <q-item-tile sublabel>{{ entry.name }}</q-item-tile>
-                </q-item-main>
+                </q-item-label>
                 <q-item-side>
                     <q-btn
                         color="primary" style="width:25px; margin-right: 10px;"
@@ -86,22 +86,22 @@
                     <q-list link separator style="min-width: 150px; max-height: 300px;">
                         <q-item v-close-overlay
                                 @click.native="details(entry)">
-                            <q-item-main label="Show details" />
+                            <q-item-label label="Show details" />
                         </q-item>
 
                         <q-item v-close-overlay
                                 @click.native="sendToAddress(entry, $event)">
-                            <q-item-main label="Send to this address" />
+                            <q-item-label label="Send to this address" />
                         </q-item>
 
                         <q-item v-close-overlay
                                 @click.native="copyAddress(entry, $event)">
-                            <q-item-main label="Copy address" />
+                            <q-item-label label="Copy address" />
                         </q-item>
 
                         <q-item v-close-overlay
                                 @click.native="$refs[`${index}-normalIdenticon`][0].saveIdenticon()">
-                            <q-item-main label="Save identicon to file" />
+                            <q-item-label label="Save identicon to file" />
                         </q-item>
                     </q-list>
                 </q-context-menu>

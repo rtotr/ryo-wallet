@@ -586,10 +586,10 @@
                                                     <q-item-side>
                                                         <Identicon :address="block.minedTo" ref="identicon" />
                                                     </q-item-side>
-                                                    <q-item-main>
+                                                    <q-item-label>
                                                         <q-item-tile label>{{ block.minedToName }}</q-item-tile>
                                                         <q-item-tile class="monospace ellipsis" sublabel>{{ block.minedTo }}</q-item-tile>
-                                                    </q-item-main>
+                                                    </q-item-label>
                                                 </q-item>
                                             </div>
                                         </div>

@@ -3,12 +3,12 @@
     <q-item-side>
         <Identicon :address="address" :size="12" ref="identicon" />
     </q-item-side>
-    <q-item-main class="self-start">
+    <q-item-label class="self-start">
         <q-item-tile label>{{ title }}</q-item-tile>
         <q-item-tile class="monospace break-all" sublabel>{{ address }}</q-item-tile>
         <q-item-tile v-if="payment_id" sublabel>Payment id: {{ payment_id }}</q-item-tile>
         <q-item-tile v-if="extra" sublabel>{{ extra }}</q-item-tile>
-    </q-item-main>
+    </q-item-label>
     <q-item-side>
         <q-btn
             color="primary" style="width:25px;"
@@ -26,12 +26,12 @@
         <q-list link separator style="min-width: 150px; max-height: 300px;">
             <q-item v-close-overlay
                     @click.native="copyAddress(address, $event)">
-                <q-item-main label="Copy address" />
+                <q-item-label label="Copy address" />
             </q-item>
 
             <q-item v-close-overlay
                     @click.native="$refs.identicon.saveIdenticon()">
-                <q-item-main label="Save identicon to file" />
+                <q-item-label label="Save identicon to file" />
             </q-item>
         </q-list>
     </q-context-menu>
@@ -123,7 +123,7 @@ export default {
         display: table;
     }
 
-    .q-item-main {
+    .q-item-label {
         .q-item-label {
             font-size:2em;
         }

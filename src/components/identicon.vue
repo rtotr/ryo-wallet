@@ -7,7 +7,7 @@
             <q-item v-close-overlay
                     :disabled="img == defaultImg"
                     @click.native="saveIdenticon()">
-                <q-item-main label="Save identicon to file" />
+                <q-item-label label="Save identicon to file" />
             </q-item>
         </q-list>
     </q-context-menu>

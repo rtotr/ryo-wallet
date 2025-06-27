@@ -55,7 +55,7 @@
                 <q-item-side>
                     <Identicon :address="newTx.address" menu />
                 </q-item-side>
-                <q-item-main>
+                <q-item-label>
                     <q-field>
                         <q-input v-model="newTx.address" float-label="Address"
                                  :dark="theme=='dark'"
@@ -63,7 +63,7 @@
                                  :error="$v.newTx.address.$error"
                                  />
                     </q-field>
-                </q-item-main>
+                </q-item-label>
             </q-item>
 
             <q-field style="margin-top:0">

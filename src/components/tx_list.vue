@@ -13,10 +13,10 @@
                     <q-item-side>
                         <TxTypeIcon :type="tx.type" />
                     </q-item-side>
-                    <q-item-main>
+                    <q-item-label>
                         <q-item-tile class="monospace ellipsis" label>{{ tx.txid }}</q-item-tile>
                         <q-item-tile sublabel>{{ formatHeight(tx) }}</q-item-tile>
-                    </q-item-main>
+                    </q-item-label>
                     <q-item-side>
                         <q-item-tile label>
                             <FormatRyo :amount="tx.amount" />
@@ -31,17 +31,17 @@
                         <q-list link separator style="min-width: 150px; max-height: 300px;">
                             <q-item v-close-overlay
                                     @click.native="details(tx)">
-                                <q-item-main label="Show details" />
+                                <q-item-label label="Show details" />
                             </q-item>
 
                             <q-item v-close-overlay
                                     @click.native="copyTxid(tx.txid, $event)">
-                                <q-item-main label="Copy transaction id" />
+                                <q-item-label label="Copy transaction id" />
                             </q-item>
 
                             <q-item v-close-overlay
                                     @click.native="openExplorer(tx.txid)">
-                                <q-item-main label="View on explorer" />
+                                <q-item-label label="View on explorer" />
                             </q-item>
                         </q-list>
                     </q-context-menu>

@@ -30,33 +30,33 @@
                         <q-list separator link>
                             <q-item :disabled="!is_ready"
                                     v-close-overlay @click.native="getPrivateKeys()">
-                                <q-item-main>
+                                <q-item-label>
                                     <q-item-tile label>Show Private Keys</q-item-tile>
-                                </q-item-main>
+                                </q-item-label>
                             </q-item>
                             <q-item :disabled="!is_ready"
                                     v-close-overlay @click.native="showModal('change_password')">
-                                <q-item-main>
+                                <q-item-label>
                                     <q-item-tile label>Change Password</q-item-tile>
-                                </q-item-main>
+                                </q-item-label>
                             </q-item>
                             <q-item :disabled="!is_ready"
                                     v-close-overlay @click.native="showModal('rescan')">
-                                <q-item-main>
+                                <q-item-label>
                                     <q-item-tile label>Rescan Wallet</q-item-tile>
-                                </q-item-main>
+                                </q-item-label>
                             </q-item>
                             <q-item :disabled="!is_ready"
                                     v-close-overlay @click.native="showModal('key_image')">
-                                <q-item-main>
+                                <q-item-label>
                                     <q-item-tile label>Manage Key Images</q-item-tile>
-                                </q-item-main>
+                                </q-item-label>
                             </q-item>
                             <q-item :disabled="!is_ready"
                                     v-close-overlay @click.native="deleteWallet()">
-                                <q-item-main>
+                                <q-item-label>
                                     <q-item-tile label>Delete Wallet</q-item-tile>
-                                </q-item-main>
+                                </q-item-label>
                             </q-item>
                         </q-list>
                     </q-menu>

@@ -89,20 +89,20 @@
                 <q-item-label header>Peer list</q-item-label>
 
                 <q-item link v-for="(entry, index) in daemon.connections" @click.native="showPeerDetails(entry)">
-                    <q-item-main>
+                    <q-item-label>
                         <q-item-tile label>{{ entry.address }}</q-item-tile>
                         <q-item-tile sublabel>Height: {{ entry.height }}</q-item-tile>
-                    </q-item-main>
+                    </q-item-label>
                 </q-item>
 
                 <template v-if="daemon.bans.length">
 
                     <q-item-label header>Banned peers (bans will cleared if wallet is restarted)</q-item-label>
                     <q-item v-for="(entry, index) in daemon.bans">
-                        <q-item-main>
+                        <q-item-label>
                             <q-item-tile label>{{ entry.host }}</q-item-tile>
                             <q-item-tile sublabel>Banned until {{ new Date(Date.now() + entry.seconds * 1000).toLocaleString() }}</q-item-tile>
-                        </q-item-main>
+                        </q-item-label>
                     </q-item>
 
                 </template>

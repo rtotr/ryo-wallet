@@ -23,7 +23,7 @@
                     <q-item-side>
                         <Identicon :address="newEntry.address" menu />
                     </q-item-side>
-                    <q-item-main>
+                    <q-item-label>
                         <q-field>
                             <q-input v-model="newEntry.address" float-label="Address"
                                      @blur="$v.newEntry.address.$touch"
@@ -31,15 +31,15 @@
                                      :dark="theme=='dark'"
                                      />
                         </q-field>
-                    </q-item-main>
+                    </q-item-label>
                 </q-item>
 
                 <q-item>
-                    <q-item-main>
+                    <q-item-label>
                         <q-field>
                             <q-input v-model="newEntry.name" float-label="Name" :dark="theme=='dark'" />
                         </q-field>
-                    </q-item-main>
+                    </q-item-label>
                     <q-item-side>
                         <q-checkbox
                             v-model="newEntry.starred"
@@ -51,7 +51,7 @@
                 </q-item>
 
                 <q-item>
-                    <q-item-main>
+                    <q-item-label>
                         <q-field>
                             <q-input v-model="newEntry.payment_id" float-label="Payment ID (optional)"
                                      @blur="$v.newEntry.payment_id.$touch"
@@ -59,24 +59,24 @@
                                      :dark="theme=='dark'"
                                      />
                         </q-field>
-                    </q-item-main>
+                    </q-item-label>
                 </q-item>
 
                 <q-item>
-                    <q-item-main>
+                    <q-item-label>
                         <q-field>
                             <q-input v-model="newEntry.description" type="textarea" float-label="Notes (optional)" :dark="theme=='dark'" />
                         </q-field>
-                    </q-item-main>
+                    </q-item-label>
                 </q-item>
 
 
                 <q-item v-if="mode=='edit'">
-                    <q-item-main>
+                    <q-item-label>
                         <q-field>
                             <q-btn class="float-right" color="red" @click="deleteEntry()" label="Delete" />
                         </q-field>
-                    </q-item-main>
+                    </q-item-label>
                 </q-item>
 
 
