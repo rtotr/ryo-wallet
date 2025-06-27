@@ -25,3 +25,5 @@ yarn-error.log*
 # bin dir
 bin/*
 !bin/.gitkeep
+src/store/store-flag.d.ts
+src-electron/electron-flag.d.ts

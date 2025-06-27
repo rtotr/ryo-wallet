@@ -1,48 +1,41 @@
+/* eslint-disable comma-dangle */
 // Configuration for your app
 
 module.exports = function (ctx) {
-    return {
-        // app plugins (/src/plugins)
-        plugins: [
-            "i18n",
-            "axios",
-            "vuelidate",
-            "gateway",
-            "timeago"
-        ],
-        css: [
-            "app.styl"
-        ],
-        extras: [
-            ctx.theme.mat ? "roboto-font" : null,
-            "material-icons" // optional, you are not bound to it
-            // "ionicons",
-            // "mdi",
-            // "fontawesome"
-        ],
-        supportIE: false,
-        build: {
-            scopeHoisting: true,
-            vueRouterMode: "history",
-            // vueCompiler: true,
-            // gzip: true,
-            // analyze: true,
-            // extractCSS: false,
-            sourceMap: true,
-            extendWebpack(cfg) {
-                cfg.module.rules.push({
-                    test: /RyoCoreCpp\.js$/,
-                    loader: "exports-loader"
-                })
-                cfg.module.rules.push({
-                    test:  /RyoCoreCpp\.wasm$/,
-                    type: "javascript/auto",
-                    loader: "file-loader",
-                    options: {
-                        name: "[name]-[hash].[ext]",
-                    }
-                })
-                /*
+  return {
+    // app plugins (/src/boot)
+    boot: ['i18n', 'axios', 'vuelidate', 'gateway', 'timeago'],
+    css: ['app.styl'],
+    extras: [
+      'roboto-font',
+      'material-icons', // optional, you are not bound to it
+      // "ionicons-v4",
+      // "6",
+      // "fontawesome-v6"
+    ],
+    supportIE: false,
+    build: {
+      scopeHoisting: true,
+      vueRouterMode: 'history',
+      // vueCompiler: true,
+      // gzip: true,
+      // analyze: true,
+      // extractCSS: false,
+      sourceMap: true,
+      extendWebpack (cfg) {
+        cfg.module.rules.push({
+          test: /RyoCoreCpp\.js$/,
+          loader: 'exports-loader',
+        })
+        cfg.module.rules.push({
+          test: /RyoCoreCpp\.wasm$/,
+          type: 'javascript/auto',
+          loader: 'file-loader',
+          options: {
+            name: '[name]-[hash].[ext]',
+          },
+        })
+        /*
                 cfg.module.rules.push({
                     enforce: "pre",
                     test: /\.(js|vue)$/,
@@ -50,196 +43,185 @@ module.exports = function (ctx) {
                     exclude: /(node_modules|quasar)/
                 })
                 */
-            }
+      },
+    },
+    devServer: {
+      // https: true,
+      // port: 8080,
+      open: true, // opens browser window automatically
+    },
+    // framework: "all" --- includes everything; for dev only!
+    framework: {
+      components: [
+        'QLayout',
+        'QLayoutHeader',
+        'QLayoutFooter',
+        'QLayoutDrawer',
+        'QPageContainer',
+        'QPage',
+        'QToolbar',
+        'QToolbarTitle',
+        'QTooltip',
+        'QField',
+        'QInput',
+        'QRadio',
+        'QBtn',
+        'QBtnToggle',
+        'QIcon',
+        'QTabs',
+        'QTab',
+        'QRouteTab',
+        'QBtnDropdown',
+        'QPopover',
+        'QModal',
+        'QModalLayout',
+        'QStep',
+        'QStepper',
+        'QStepperNavigation',
+        'QSpinner',
+        'QSlider',
+        'QChip',
+        'QList',
+        'QListHeader',
+        'QItem',
+        'QItemMain',
+        'QItemSeparator',
+        'QItemSide',
+        'QItemTile',
+        'QSelect',
+        'QToggle',
+        'QPageSticky',
+        'QCollapsible',
+        'QCheckbox',
+        'QInnerLoading',
+        'QInfiniteScroll',
+        'QDatetime',
+        'QContextMenu',
+        'QTable',
+        'QTh',
+        'QTr',
+        'QTd',
+        'QTableColumns',
+      ],
+      directives: ['Ripple', 'CloseOverlay'],
+      // Quasar plugins
+      plugins: ['Notify', 'Loading', 'LocalStorage', 'Dialog'],
+      // iconSet: 'material-icons'
+      // lang: 'de' // Quasar language
+    },
+    // animations: "all" --- includes all animations
+    animations: [],
+    pwa: {
+      // workboxPluginMode: "InjectManifest",
+      // workboxOptions: {},
+      manifest: {
+        // name: "Quasar App",
+        // short_name: "Quasar-PWA",
+        // description: "Best PWA App in town!",
+        display: 'standalone',
+        orientation: 'portrait',
+        background_color: '#ffffff',
+        theme_color: '#027be3',
+        icons: [
+          {
+            src: 'statics/icons/icon-128x128.png',
+            sizes: '128x128',
+            type: 'image/png',
+          },
+          {
+            src: 'statics/icons/icon-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: 'statics/icons/icon-256x256.png',
+            sizes: '256x256',
+            type: 'image/png',
+          },
+          {
+            src: 'statics/icons/icon-384x384.png',
+            sizes: '384x384',
+            type: 'image/png',
+          },
+          {
+            src: 'statics/icons/icon-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
+      },
+    },
+    cordova: {
+      // id: "org.cordova.quasar.app"
+    },
+    electron: {
+      bundler: 'builder', // or "packager"
+      extendWebpack (cfg) {
+        cfg.module.rules.push({
+          test: /RyoCoreCpp\.js$/,
+          loader: 'exports-loader',
+        })
+        cfg.module.rules.push({
+          test: /RyoCoreCpp\.wasm$/,
+          type: 'javascript/auto',
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+          },
+        })
+      },
+      packager: {
+        // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
+
+        // OS X / Mac App Store
+        // appBundleId: "",
+        // appCategoryType: "",
+        // osxSign: "",
+        // protocol: "myapp://path",
+
+        // Window only
+        // win32metadata: { ... }
+
+        extraResource: ['bin'],
+      },
+      builder: {
+        // https://www.electron.build/configuration/configuration
+
+        appId: 'com.ryo-currency.wallet',
+        productName: 'Ryo Wallet Atom',
+        artifactName: 'ryo-wallet.${ext}',
+        copyright: 'Copyright © 2025 Ryo Currency Project',
+
+        // directories: {
+        //     buildResources: "src-electron/build"
+        // },
+
+        linux: {
+          target: ['AppImage'],
+          icon: 'src-electron/icons/icon_512x512.png',
+          artifactName: 'ryo-wallet-linux-x64.${ext}',
+          category: 'Finance',
         },
-        devServer: {
-            // https: true,
-            // port: 8080,
-            open: true // opens browser window automatically
+
+        win: {
+          target: ['zip'],
+          artifactName: 'ryo-wallet-win-x64.${ext}',
+          icon: 'src-electron/icons/icon.ico',
         },
-        // framework: "all" --- includes everything; for dev only!
-        framework: {
-            components: [
-                "QLayout",
-                "QLayoutHeader",
-                "QLayoutFooter",
-                "QLayoutDrawer",
-                "QPageContainer",
-                "QPage",
-                "QToolbar",
-                "QToolbarTitle",
-                "QTooltip",
-                "QField",
-                "QInput",
-                "QRadio",
-                "QBtn",
-                "QBtnToggle",
-                "QIcon",
-                "QTabs",
-                "QTab",
-                "QRouteTab",
-                "QBtnDropdown",
-                "QPopover",
-                "QModal",
-                "QModalLayout",
-                "QStep",
-                "QStepper",
-                "QStepperNavigation",
-                "QSpinner",
-                "QSlider",
-                "QChip",
-                "QList",
-                "QListHeader",
-                "QItem",
-                "QItemMain",
-                "QItemSeparator",
-                "QItemSide",
-                "QItemTile",
-                "QSelect",
-                "QToggle",
-                "QPageSticky",
-                "QCollapsible",
-                "QCheckbox",
-                "QInnerLoading",
-                "QInfiniteScroll",
-                "QDatetime",
-                "QContextMenu",
-                "QTable",
-                "QTh",
-                "QTr",
-                "QTd",
-                "QTableColumns"
-            ],
-            directives: [
-                "Ripple",
-                "CloseOverlay"
-            ],
-            // Quasar plugins
-            plugins: [
-                "Notify",
-                "Loading",
-                "LocalStorage",
-                "Dialog"
-            ]
-            // iconSet: ctx.theme.mat ? "material-icons" : "ionicons"
-            // i18n: "de" // Quasar language
+
+        mac: {
+          target: ['dmg'],
+          icon: 'src-electron/icons/icon.icns',
+          artifactName: 'ryo-wallet-mac-arm64.${ext}',
+          category: 'public.app-category.finance',
         },
-        // animations: "all" --- includes all animations
-        animations: [],
-        pwa: {
-            // workboxPluginMode: "InjectManifest",
-            // workboxOptions: {},
-            manifest: {
-                // name: "Quasar App",
-                // short_name: "Quasar-PWA",
-                // description: "Best PWA App in town!",
-                display: "standalone",
-                orientation: "portrait",
-                background_color: "#ffffff",
-                theme_color: "#027be3",
-                icons: [{
-                        "src": "statics/icons/icon-128x128.png",
-                        "sizes": "128x128",
-                        "type": "image/png"
-                    },
-                    {
-                        "src": "statics/icons/icon-192x192.png",
-                        "sizes": "192x192",
-                        "type": "image/png"
-                    },
-                    {
-                        "src": "statics/icons/icon-256x256.png",
-                        "sizes": "256x256",
-                        "type": "image/png"
-                    },
-                    {
-                        "src": "statics/icons/icon-384x384.png",
-                        "sizes": "384x384",
-                        "type": "image/png"
-                    },
-                    {
-                        "src": "statics/icons/icon-512x512.png",
-                        "sizes": "512x512",
-                        "type": "image/png"
-                    }
-                ]
-            }
+
+        dmg: {
+          background: 'src-electron/build/ryo-dmg.tiff',
         },
-        cordova: {
-            // id: "org.cordova.quasar.app"
-        },
-        electron: {
-            bundler: "builder", // or "packager"
-            extendWebpack(cfg) {
-                cfg.module.rules.push({
-                    test: /RyoCoreCpp\.js$/,
-                    loader: "exports-loader"
-                })
-                cfg.module.rules.push({
-                    test:  /RyoCoreCpp\.wasm$/,
-                    type: "javascript/auto",
-                    loader: "file-loader",
-                    options: {
-                        name: "[name].[ext]",
-                    }
-                })
-            },
-            packager: {
-                // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
 
-                // OS X / Mac App Store
-                // appBundleId: "",
-                // appCategoryType: "",
-                // osxSign: "",
-                // protocol: "myapp://path",
-
-                // Window only
-                // win32metadata: { ... }
-
-                extraResource: [
-                    "bin",
-                ]
-            },
-            builder: {
-                // https://www.electron.build/configuration/configuration
-
-                appId: "com.ryo-currency.wallet",
-                productName: "Ryo Wallet Atom",
-                artifactName: 'ryo-wallet.${ext}',
-                copyright: "Copyright © 2025 Ryo Currency Project",
-
-                // directories: {
-                //     buildResources: "src-electron/build"
-                // },
-
-                linux: {
-                    target: ["AppImage"],
-                    icon: "src-electron/icons/icon_512x512.png",
-                    artifactName: 'ryo-wallet-linux-x64.${ext}',
-                    category: "Finance"
-                },
-
-                win: {
-                    target: ["zip"],
-                    artifactName: 'ryo-wallet-win-x64.${ext}',
-                    icon: "src-electron/icons/icon.ico"
-                },
-
-                mac: {
-                    target: ["dmg"],
-                    icon: "src-electron/icons/icon.icns",
-                    artifactName: 'ryo-wallet-mac-arm64.${ext}',
-                    category: "public.app-category.finance"
-                },
-
-                dmg: {
-                    background: "src-electron/build/ryo-dmg.tiff"
-                },
-
-                extraResources: [
-                    "bin"
-                ]
-            }
-        }
-    }
-}
+        extraResources: ['bin'],
+      },
+    },
+  }
+};
