@@ -1,5 +1,5 @@
 <template>
-<q-modal v-model="isVisible" maximized>
+<q-dialog v-model="isVisible" maximized>
     <q-modal-layout>
         <q-toolbar slot="header" color="dark" inverted>
             <q-btn
@@ -99,7 +99,7 @@
     </q-modal-layout>
 
     <template v-if="address != null">
-        <q-modal v-model="isQRCodeVisible" minimized :content-css="{padding: '25px'}">
+        <q-dialog v-model="isQRCodeVisible" minimized :content-css="{padding: '25px'}">
 
             <div class="text-center q-mb-sm q-pa-md" style="background: white;">
                 <qrcode-vue :value="address.address" size="240" ref="qr">
@@ -118,10 +118,10 @@
                  @click="isQRCodeVisible = false"
                  label="Close"
              />
-        </q-modal>
+        </q-dialog>
     </template>
 
-</q-modal>
+</q-dialog>
 </template>
 
 <script>

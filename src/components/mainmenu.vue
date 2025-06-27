@@ -40,7 +40,7 @@
         </q-btn>
         <settings-modal ref="settingsModal" />
         <pool-modal ref="poolModal" />
-        <q-modal minimized ref="aboutModal">
+        <q-dialog minimized ref="aboutModal">
             <div class="about-modal">
 
                 <img class="q-mb-md" src="statics/ryo-wallet.svg" height="42" />
@@ -69,9 +69,9 @@
                         label="Close"
                 />
             </div>
-        </q-modal>
+        </q-dialog>
 
-        <q-modal minimized ref="helpModal">
+        <q-dialog minimized ref="helpModal">
             <div class="about-modal">
 
                 <img class="q-mb-md" src="statics/ryo-wallet.svg" height="42" />
@@ -108,7 +108,7 @@
                         label="Close"
                 />
             </div>
-        </q-modal>
+        </q-dialog>
     </div>
 </template>
 

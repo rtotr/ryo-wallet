@@ -72,7 +72,7 @@
         <TxList :limit="5" />
     </div>
 
-    <q-modal minimized v-model="modals.private_keys.visible" @hide="closePrivateKeys()">
+    <q-dialog minimized v-model="modals.private_keys.visible" @hide="closePrivateKeys()">
         <div class="modal-header">Show private keys</div>
         <div class="q-ma-lg">
 
@@ -141,10 +141,10 @@
                     />
             </div>
         </div>
-    </q-modal>
+    </q-dialog>
 
 
-    <q-modal minimized v-model="modals.rescan.visible">
+    <q-dialog minimized v-model="modals.rescan.visible">
         <div class="modal-header">Rescan wallet</div>
         <div class="q-ma-lg">
             <p>Select full rescan or rescan of spent outputs only.</p>
@@ -169,9 +169,9 @@
                     />
             </div>
         </div>
-    </q-modal>
+    </q-dialog>
 
-    <q-modal minimized v-model="modals.key_image.visible">
+    <q-dialog minimized v-model="modals.key_image.visible">
         <div class="modal-header">{{modals.key_image.type}} key images</div>
         <div class="q-ma-lg">
             <div class="row q-mb-md">
@@ -223,9 +223,9 @@
                     />
             </div>
         </div>
-    </q-modal>
+    </q-dialog>
 
-    <q-modal minimized v-model="modals.change_password.visible" @hide="clearChangePassword()">
+    <q-dialog minimized v-model="modals.change_password.visible" @hide="clearChangePassword()">
         <div class="modal-header">Change password</div>
         <div class="q-ma-lg">
             <q-field>
@@ -253,7 +253,7 @@
                     />
             </div>
         </div>
-    </q-modal>
+    </q-dialog>
 
 </q-page>
 </template>

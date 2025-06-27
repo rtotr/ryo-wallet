@@ -1,5 +1,5 @@
 <template>
-<q-modal v-model="isVisible" maximized class="address-book-details">
+<q-dialog v-model="isVisible" maximized class="address-book-details">
 
     <q-modal-layout v-if="mode == 'edit' || mode == 'new'">
         <q-toolbar slot="header" color="dark" inverted>
@@ -129,7 +129,7 @@
     </q-modal-layout>
 
 
-</q-modal>
+</q-dialog>
 </template>
 
 <script>

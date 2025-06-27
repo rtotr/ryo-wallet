@@ -1,5 +1,5 @@
 <template>
-<q-modal v-model="isVisible" maximized class="settings-modal">
+<q-dialog v-model="isVisible" maximized class="settings-modal">
     <q-modal-layout>
         <q-toolbar slot="header" color="dark" inverted>
             <q-btn flat round dense @click="isVisible = false" icon="reply" />
@@ -113,7 +113,7 @@
 
     </q-modal-layout>
 
-</q-modal>
+</q-dialog>
 </template>
 
 <script>

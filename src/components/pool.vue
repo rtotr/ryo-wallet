@@ -1,5 +1,5 @@
 <template>
-<q-modal v-model="isVisible" maximized class="pool-modal">
+<q-dialog v-model="isVisible" maximized class="pool-modal">
     <q-modal-layout>
         <q-toolbar slot="header" color="dark" inverted>
             <q-btn flat round dense @click="isVisible = false" icon="reply" />
@@ -224,7 +224,7 @@
 
             </div>
 
-            <q-modal v-model="modals.stats">
+            <q-dialog v-model="modals.stats">
                 <div class="modal-header">About privately sharing your hashrate</div>
                 <div class="q-ma-lg">
                     <div style="max-width: 650px">
@@ -246,9 +246,9 @@
                             />
                     </div>
                 </div>
-            </q-modal>
+            </q-dialog>
 
-            <q-modal v-model="modals.vardiff">
+            <q-dialog v-model="modals.vardiff">
                 <div class="modal-header">Variable difficulty settings (advanced)</div>
                 <div class="q-mx-lg q-mb-lg q-mt-md">
                     <div style="max-width: 650px">
@@ -364,7 +364,7 @@
                     </div>
 
                 </div>
-            </q-modal>
+            </q-dialog>
 
         </div>
 
@@ -418,7 +418,7 @@
                     </div>
                 </div>
 
-                <q-modal v-model="modals.xmr_stak">
+                <q-dialog v-model="modals.xmr_stak">
                     <div class="modal-header">Config example: xmr-stak</div>
                     <div class="q-ma-lg">
 
@@ -474,7 +474,7 @@
                             </div>
                         </div>
                     </div>
-                </q-modal>
+                </q-dialog>
 
             </div>
         </div>
@@ -561,7 +561,7 @@
                     </q-table>
                 </template>
 
-                <q-modal maximized v-model="modals.block">
+                <q-dialog maximized v-model="modals.block">
 
                     <q-modal-layout>
                         <q-toolbar slot="header" color="dark" inverted>
@@ -722,14 +722,14 @@
 
                         </div>
                     </q-modal-layout>
-                </q-modal>
+                </q-dialog>
 
             </div>
         </div>
 
     </q-modal-layout>
 
-</q-modal>
+</q-dialog>
 </template>
 
 <script>
