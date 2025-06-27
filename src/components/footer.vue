@@ -1,5 +1,5 @@
 <template>
-<q-layout-footer class="status-footer">
+<q-footer class="status-footer">
     <div class="status-line">
 
         <template v-if="config.daemon.type !== 'remote'">
@@ -34,7 +34,7 @@
         <div v-bind:style="{ width: daemon_pct+'%' }"></div>
         <div v-bind:style="{ width: wallet_pct+'%' }"></div>
     </div>
-</q-layout-footer>
+</q-footer>
 </template>
 
 <script>

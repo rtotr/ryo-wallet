@@ -1,6 +1,6 @@
 <template>
 <q-layout view="hHh Lpr lFf" style="overflow-x:hidden">
-    <q-layout-header class="shift-title">
+    <q-header class="shift-title">
         <main-menu />
 
         <q-tabs class="col" align="justify" :color="theme == 'dark' ? 'light' : 'dark'" inverted>
@@ -22,7 +22,7 @@
             </q-route-tab>
 
         </q-tabs>
-    </q-layout-header>
+    </q-header>
 
     <q-page-container>
         <keep-alive>

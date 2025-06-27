@@ -98,27 +98,27 @@
 
     </q-stepper>
 
-    <q-layout-footer class="no-shadow q-pa-sm">
+    <q-footer class="no-shadow q-pa-sm">
         <div class="row justify-end">
             <div>
-	        <q-btn
+            <q-btn
                     :color="theme=='dark'?'dark':'white'"
                     :text-color="theme=='dark'?'white':'dark'"
-	            @click="clickPrev()"
-	            label="Back"
-	            />
+                @click="clickPrev()"
+                label="Back"
+                />
             </div>
             <div>
-	        <q-btn
+            <q-btn
                     class="q-ml-sm"
                     color="primary"
-	            @click="clickNext()"
-	            label="Next"
-	            />
+                @click="clickNext()"
+                label="Next"
+                />
             </div>
         </div>
 
-    </q-layout-footer>
+    </q-footer>
 
 </q-page>
 </template>
