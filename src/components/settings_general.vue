@@ -68,7 +68,7 @@
         </div>
     </q-field>
 
-    <q-collapsible label="Advanced Options" header-class="non-selectable row reverse advanced-options-label">
+    <q-expansion-item label="Advanced Options" header-class="non-selectable row reverse advanced-options-label">
 
         <q-field>
             <div class="row gutter-sm items-end">
@@ -135,7 +135,7 @@
             </div>
         </q-field>
 
-    </q-collapsible>
+    </q-expansion-item>
 </div>
 </template>
 
@@ -180,7 +180,7 @@ export default {
     }
 
     .q-item,
-    .q-collapsible-sub-item {
+    .q-expansion-item-sub-item {
         padding: 0;
     }
 }

@@ -91,7 +91,7 @@ module.exports = function (ctx) {
         'QSelect',
         'QToggle',
         'QPageSticky',
-        'QCollapsible',
+        'QExpansionItem',
         'QCheckbox',
         'QInnerLoading',
         'QInfiniteScroll',
