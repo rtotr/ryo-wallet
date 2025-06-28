@@ -26,9 +26,7 @@
             <div class="row items-center gutter-sm">
                 <div class="col">
                     <template v-if="wallet.refresh_type=='date'">
-                        <q-datetime v-model="wallet.refresh_start_date" type="date"
-                                    float-label="Restore from date"
-                                    modal :min="1492486495000" :max="Date.now()"
+                        <q-date v-model="wallet.refresh_start_date"
                                     :dark="theme=='dark'"
                                     />
                     </template>

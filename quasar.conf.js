@@ -95,7 +95,7 @@ module.exports = function (ctx) {
         'QCheckbox',
         'QInnerLoading',
         'QInfiniteScroll',
-        'QDatetime',
+        'QDate',
         'QContextMenu',
         'QTable',
         'QTh',
