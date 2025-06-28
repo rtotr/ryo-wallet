@@ -101,7 +101,7 @@ module.exports = function (ctx) {
         'QTh',
         'QTr',
         'QTd',
-        'QTableColumns',
+        // 'QTableColumns',
       ],
       directives: ['Ripple', 'CloseOverlay'],
       // Quasar plugins
