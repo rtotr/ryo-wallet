@@ -95,12 +95,12 @@
 
                         <q-menu context-menu>
                             <q-list link separator style="min-width: 150px; max-height: 300px;">
-                                <q-item v-close-overlay
+                                <q-item v-close-popup
                                         @click.native="copyAddress(in_tx_address_used.address, $event)">
                                     <q-item-label label="Copy address" />
                                 </q-item>
 
-                                <q-item v-close-overlay
+                                <q-item v-close-popup
                                         @click.native="$refs.identicon.saveIdenticon()">
                                     <q-item-label label="Save identicon to file" />
                                 </q-item>
@@ -127,12 +127,12 @@
 
                             <q-menu context-menu>
                                 <q-list link separator style="min-width: 150px; max-height: 300px;">
-                                    <q-item v-close-overlay
+                                    <q-item v-close-popup
                                             @click.native="copyAddress(destination.address, $event)">
                                         <q-item-label label="Copy address" />
                                     </q-item>
 
-                                    <q-item v-close-overlay
+                                    <q-item v-close-popup
                                             @click.native="$refs.identicon.saveIdenticon()">
                                         <q-item-label label="Save identicon to file" />
                                     </q-item>

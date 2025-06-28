@@ -4,7 +4,7 @@
 
     <q-menu context-menu v-if="menu">
         <q-list link separator style="min-width: 150px; max-height: 300px;">
-            <q-item v-close-overlay
+            <q-item v-close-popup
                     :disabled="img == defaultImg"
                     @click.native="saveIdenticon()">
                 <q-item-label label="Save identicon to file" />

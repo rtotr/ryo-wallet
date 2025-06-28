@@ -29,17 +29,17 @@
 
                     <q-menu context-menu>
                         <q-list link separator style="min-width: 150px; max-height: 300px;">
-                            <q-item v-close-overlay
+                            <q-item v-close-popup
                                     @click.native="details(tx)">
                                 <q-item-label label="Show details" />
                             </q-item>
 
-                            <q-item v-close-overlay
+                            <q-item v-close-popup
                                     @click.native="copyTxid(tx.txid, $event)">
                                 <q-item-label label="Copy transaction id" />
                             </q-item>
 
-                            <q-item v-close-overlay
+                            <q-item v-close-popup
                                     @click.native="openExplorer(tx.txid)">
                                 <q-item-label label="View on explorer" />
                             </q-item>

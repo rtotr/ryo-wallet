@@ -33,17 +33,17 @@
 
                 <q-menu context-menu>
                     <q-list link separator style="min-width: 150px; max-height: 300px;">
-                        <q-item v-close-overlay
+                        <q-item v-close-popup
                                 @click.native="openWallet(wallet)">
                             <q-item-label label="Open wallet" />
                         </q-item>
 
-                        <q-item v-close-overlay
+                        <q-item v-close-popup
                                 @click.native="copyAddress(wallet.address, $event)">
                             <q-item-label label="Copy address" />
                         </q-item>
 
-                        <q-item v-close-overlay
+                        <q-item v-close-popup
                                 @click.native="$refs[`${index}-identicon`][0].saveIdenticon()">
                             <q-item-label label="Save identicon to file" />
                         </q-item>

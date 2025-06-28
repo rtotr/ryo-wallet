@@ -38,22 +38,22 @@
 
                 <q-menu context-menu>
                     <q-list link separator style="min-width: 150px; max-height: 300px;">
-                        <q-item v-close-overlay
+                        <q-item v-close-popup
                                 @click.native="details(entry)">
                             <q-item-label label="Show details" />
                         </q-item>
 
-                        <q-item v-close-overlay
+                        <q-item v-close-popup
                                 @click.native="sendToAddress(entry, $event)">
                             <q-item-label label="Send to this address" />
                         </q-item>
 
-                        <q-item v-close-overlay
+                        <q-item v-close-popup
                                 @click.native="copyAddress(entry, $event)">
                             <q-item-label label="Copy address" />
                         </q-item>
 
-                        <q-item v-close-overlay
+                        <q-item v-close-popup
                                 @click.native="$refs[`${index}-starredIdenticon`][0].saveIdenticon()">
                             <q-item-label label="Save identicon to file" />
                         </q-item>
@@ -84,22 +84,22 @@
 
                 <q-menu context-menu>
                     <q-list link separator style="min-width: 150px; max-height: 300px;">
-                        <q-item v-close-overlay
+                        <q-item v-close-popup
                                 @click.native="details(entry)">
                             <q-item-label label="Show details" />
                         </q-item>
 
-                        <q-item v-close-overlay
+                        <q-item v-close-popup
                                 @click.native="sendToAddress(entry, $event)">
                             <q-item-label label="Send to this address" />
                         </q-item>
 
-                        <q-item v-close-overlay
+                        <q-item v-close-popup
                                 @click.native="copyAddress(entry, $event)">
                             <q-item-label label="Copy address" />
                         </q-item>
 
-                        <q-item v-close-overlay
+                        <q-item v-close-popup
                                 @click.native="$refs[`${index}-normalIdenticon`][0].saveIdenticon()">
                             <q-item-label label="Save identicon to file" />
                         </q-item>

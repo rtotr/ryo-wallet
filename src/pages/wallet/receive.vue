@@ -36,17 +36,17 @@
 
             <q-menu context-menu>
                 <q-list link separator style="min-width: 150px; max-height: 300px;">
-                    <q-item v-close-overlay
+                    <q-item v-close-popup
                             @click.native="details(address)">
                         <q-item-label label="Show details" />
                     </q-item>
 
-                    <q-item v-close-overlay
+                    <q-item v-close-popup
                             @click.native="copyAddress(address.address, $event)">
                         <q-item-label label="Copy address" />
                     </q-item>
 
-                    <q-item v-close-overlay
+                    <q-item v-close-popup
                             @click.native="$refs.primaryIdenticon[0].saveIdenticon()">
                         <q-item-label label="Save identicon to file" />
                     </q-item>
@@ -78,17 +78,17 @@
 
                 <q-menu context-menu>
                     <q-list link separator style="min-width: 150px; max-height: 300px;">
-                        <q-item v-close-overlay
+                        <q-item v-close-popup
                                 @click.native="details(address)">
                             <q-item-label label="Show details" />
                         </q-item>
 
-                        <q-item v-close-overlay
+                        <q-item v-close-popup
                                 @click.native="copyAddress(address.address, $event)">
                             <q-item-label label="Copy address" />
                         </q-item>
 
-                        <q-item v-close-overlay
+                        <q-item v-close-popup
                                 @click.native="$refs[`${index}-usedIdenticon`][0].saveIdenticon()">
                             <q-item-label label="Save identicon to file" />
                         </q-item>
@@ -122,17 +122,17 @@
 
                 <q-menu context-menu>
                     <q-list link separator style="min-width: 150px; max-height: 300px;">
-                        <q-item v-close-overlay
+                        <q-item v-close-popup
                                 @click.native="details(address)">
                             <q-item-label label="Show details" />
                         </q-item>
 
-                        <q-item v-close-overlay
+                        <q-item v-close-popup
                                 @click.native="copyAddress(address.address, $event)">
                             <q-item-label label="Copy address" />
                         </q-item>
 
-                        <q-item v-close-overlay
+                        <q-item v-close-popup
                                 @click.native="$refs[`${index}-unusedIdenticon`][0].saveIdenticon()">
                             <q-item-label label="Save identicon to file" />
                         </q-item>

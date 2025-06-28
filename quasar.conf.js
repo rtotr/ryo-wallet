@@ -103,7 +103,7 @@ module.exports = function (ctx) {
         'QTd',
         // 'QTableColumns',
       ],
-      directives: ['Ripple', 'CloseOverlay'],
+      directives: ['Ripple', 'ClosePopup'],
       // Quasar plugins
       plugins: ['Notify', 'Loading', 'LocalStorage', 'Dialog'],
       // iconSet: 'material-icons'

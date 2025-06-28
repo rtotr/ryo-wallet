@@ -4,32 +4,32 @@
             <q-icon name="menu" />
             <q-menu>
                 <q-list separator link>
-                    <q-item v-close-overlay @click.native="switchWallet" v-if="!disableSwitchWallet">
+                    <q-item v-close-popup @click.native="switchWallet" v-if="!disableSwitchWallet">
                         <q-item-label>
                             <q-item-label header>Switch Wallet</q-item-label>
                         </q-item-label>
                     </q-item>
-                    <q-item v-close-overlay @click.native="openSettings">
+                    <q-item v-close-popup @click.native="openSettings">
                         <q-item-label>
                             <q-item-label header>Settings</q-item-label>
                         </q-item-label>
                     </q-item>
-                    <q-item v-if="daemon_type != 'remote'" v-close-overlay @click.native="openPool">
+                    <q-item v-if="daemon_type != 'remote'" v-close-popup @click.native="openPool">
                         <q-item-label>
                             <q-item-label header>Solo Mining</q-item-label>
                         </q-item-label>
                     </q-item>
-                    <q-item v-close-overlay @click.native="showAbout(true)">
+                    <q-item v-close-popup @click.native="showAbout(true)">
                         <q-item-label>
                             <q-item-label header>About</q-item-label>
                         </q-item-label>
                     </q-item>
-                    <q-item v-close-overlay @click.native="showHelp(true)">
+                    <q-item v-close-popup @click.native="showHelp(true)">
                         <q-item-label>
                             <q-item-label header>Help</q-item-label>
                         </q-item-label>
                     </q-item>
-                    <q-item v-close-overlay @click.native="exit">
+                    <q-item v-close-popup @click.native="exit">
                         <q-item-label>
                             <q-item-label header>Exit Ryo GUI Wallet</q-item-label>
                         </q-item-label>
