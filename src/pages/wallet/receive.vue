@@ -20,8 +20,8 @@
                 <Identicon :address="address.address" ref="primaryIdenticon" />
             </q-item-section>
             <q-item-label>
-                <q-item-tile class="monospace ellipsis" label>{{ address.address }}</q-item-tile>
-                <q-item-tile sublabel>Primary address</q-item-tile>
+                <q-item-label class="monospace ellipsis" header>{{ address.address }}</q-item-label>
+                <q-item-label caption>Primary address</q-item-label>
             </q-item-label>
             <q-item-section>
                 <q-btn
@@ -62,8 +62,8 @@
                     <Identicon :address="address.address" :ref="`${index}-usedIdenticon`" />
                 </q-item-section>
                 <q-item-label>
-                    <q-item-tile class="monospace ellipsis" label>{{ address.address }}</q-item-tile>
-                    <q-item-tile sublabel>Sub-address (Index {{ address.address_index }})</q-item-tile>
+                    <q-item-label class="monospace ellipsis" header>{{ address.address }}</q-item-label>
+                    <q-item-label caption>Sub-address (Index {{ address.address_index }})</q-item-label>
                 </q-item-label>
                 <q-item-section>
                     <q-btn
@@ -106,8 +106,8 @@
                     <Identicon :address="address.address" :ref="`${index}-unusedIdenticon`" />
                 </q-item-section>
                 <q-item-label>
-                    <q-item-tile class="monospace ellipsis" label>{{ address.address }}</q-item-tile>
-                    <q-item-tile sublabel>Sub-address (Index {{ address.address_index }})</q-item-tile>
+                    <q-item-label class="monospace ellipsis" header>{{ address.address }}</q-item-label>
+                    <q-item-label caption>Sub-address (Index {{ address.address_index }})</q-item-label>
                 </q-item-label>
                 <q-item-section>
                     <q-btn

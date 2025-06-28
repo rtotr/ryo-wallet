@@ -587,8 +587,8 @@
                                                         <Identicon :address="block.minedTo" ref="identicon" />
                                                     </q-item-section>
                                                     <q-item-label>
-                                                        <q-item-tile label>{{ block.minedToName }}</q-item-tile>
-                                                        <q-item-tile class="monospace ellipsis" sublabel>{{ block.minedTo }}</q-item-tile>
+                                                        <q-item-label header>{{ block.minedToName }}</q-item-label>
+                                                        <q-item-label class="monospace ellipsis" caption>{{ block.minedTo }}</q-item-label>
                                                     </q-item-label>
                                                 </q-item>
                                             </div>

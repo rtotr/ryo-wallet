@@ -31,31 +31,31 @@
                             <q-item :disabled="!is_ready"
                                     v-close-overlay @click.native="getPrivateKeys()">
                                 <q-item-label>
-                                    <q-item-tile label>Show Private Keys</q-item-tile>
+                                    <q-item-label header>Show Private Keys</q-item-label>
                                 </q-item-label>
                             </q-item>
                             <q-item :disabled="!is_ready"
                                     v-close-overlay @click.native="showModal('change_password')">
                                 <q-item-label>
-                                    <q-item-tile label>Change Password</q-item-tile>
+                                    <q-item-label header>Change Password</q-item-label>
                                 </q-item-label>
                             </q-item>
                             <q-item :disabled="!is_ready"
                                     v-close-overlay @click.native="showModal('rescan')">
                                 <q-item-label>
-                                    <q-item-tile label>Rescan Wallet</q-item-tile>
+                                    <q-item-label header>Rescan Wallet</q-item-label>
                                 </q-item-label>
                             </q-item>
                             <q-item :disabled="!is_ready"
                                     v-close-overlay @click.native="showModal('key_image')">
                                 <q-item-label>
-                                    <q-item-tile label>Manage Key Images</q-item-tile>
+                                    <q-item-label header>Manage Key Images</q-item-label>
                                 </q-item-label>
                             </q-item>
                             <q-item :disabled="!is_ready"
                                     v-close-overlay @click.native="deleteWallet()">
                                 <q-item-label>
-                                    <q-item-tile label>Delete Wallet</q-item-tile>
+                                    <q-item-label header>Delete Wallet</q-item-label>
                                 </q-item-label>
                             </q-item>
                         </q-list>

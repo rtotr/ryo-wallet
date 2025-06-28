@@ -20,8 +20,8 @@
                     <Identicon :address="entry.address" :ref="`${index}-starredIdenticon`" />
                 </q-item-section>
                 <q-item-label>
-                    <q-item-tile class="monospace ellipsis" label>{{ entry.address }}</q-item-tile>
-                    <q-item-tile sublabel>{{ entry.name }}</q-item-tile>
+                    <q-item-label class="monospace ellipsis" header>{{ entry.address }}</q-item-label>
+                    <q-item-label caption>{{ entry.name }}</q-item-label>
                 </q-item-label>
                 <q-item-section>
                     <q-btn
@@ -66,8 +66,8 @@
                     <Identicon :address="entry.address" :ref="`${index}-normalIdenticon`" />
                 </q-item-section>
                 <q-item-label>
-                    <q-item-tile class="monospace ellipsis" label>{{ entry.address }}</q-item-tile>
-                    <q-item-tile sublabel>{{ entry.name }}</q-item-tile>
+                    <q-item-label class="monospace ellipsis" header>{{ entry.address }}</q-item-label>
+                    <q-item-label caption>{{ entry.name }}</q-item-label>
                 </q-item-label>
                 <q-item-section>
                     <q-btn

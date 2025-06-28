@@ -4,10 +4,10 @@
         <Identicon :address="address" :size="12" ref="identicon" />
     </q-item-section>
     <q-item-label class="self-start">
-        <q-item-tile label>{{ title }}</q-item-tile>
-        <q-item-tile class="monospace break-all" sublabel>{{ address }}</q-item-tile>
-        <q-item-tile v-if="payment_id" sublabel>Payment id: {{ payment_id }}</q-item-tile>
-        <q-item-tile v-if="extra" sublabel>{{ extra }}</q-item-tile>
+        <q-item-label header>{{ title }}</q-item-label>
+        <q-item-label class="monospace break-all" caption>{{ address }}</q-item-label>
+        <q-item-label v-if="payment_id" caption>Payment id: {{ payment_id }}</q-item-label>
+        <q-item-label v-if="extra" caption>{{ extra }}</q-item-label>
     </q-item-label>
     <q-item-section>
         <q-btn

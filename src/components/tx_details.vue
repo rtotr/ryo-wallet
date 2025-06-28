@@ -89,8 +89,8 @@
                             <Identicon :address="in_tx_address_used.address" ref="identicon" />
                         </q-item-section>
                         <q-item-label>
-                            <q-item-tile label>{{ in_tx_address_used.address_index_text }}</q-item-tile>
-                            <q-item-tile class="monospace ellipsis" sublabel>{{ in_tx_address_used.address }}</q-item-tile>
+                            <q-item-label header>{{ in_tx_address_used.address_index_text }}</q-item-label>
+                            <q-item-label class="monospace ellipsis" caption>{{ in_tx_address_used.address }}</q-item-label>
                         </q-item-label>
 
                         <q-context-menu>
@@ -120,9 +120,9 @@
                                 <Identicon :address="destination.address" ref="identicon" />
                             </q-item-section>
                             <q-item-label>
-                                <q-item-tile label>{{ destination.name }}</q-item-tile>
-                                <q-item-tile class="monospace ellipsis" sublabel>{{ destination.address }}</q-item-tile>
-                                <q-item-tile sublabel><FormatRyo :amount="destination.amount" /></q-item-tile>
+                                <q-item-label header>{{ destination.name }}</q-item-label header>
+                                <q-item-label class="monospace ellipsis" caption>{{ destination.address }}</q-item-label>
+                                <q-item-label caption><FormatRyo :amount="destination.amount" /></q-item-label>
                             </q-item-label>
 
                             <q-context-menu>
@@ -147,7 +147,7 @@
                                 <Identicon address="" />
                             </q-item-section>
                             <q-item-label>
-                                <q-item-tile label>Destination unknown</q-item-tile>
+                                <q-item-label header>Destination unknown</q-item-label>
                             </q-item-label>
                         </q-item>
                     </template>

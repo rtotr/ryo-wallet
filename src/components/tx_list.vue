@@ -14,17 +14,17 @@
                         <TxTypeIcon :type="tx.type" />
                     </q-item-section>
                     <q-item-label>
-                        <q-item-tile class="monospace ellipsis" label>{{ tx.txid }}</q-item-tile>
-                        <q-item-tile sublabel>{{ formatHeight(tx) }}</q-item-tile>
+                        <q-item-label class="monospace ellipsis" header>{{ tx.txid }}</q-item-label>
+                        <q-item-label caption>{{ formatHeight(tx) }}</q-item-label>
                     </q-item-label>
                     <q-item-section>
-                        <q-item-tile label>
+                        <q-item-label header>
                             <FormatRyo :amount="tx.amount" />
-                        </q-item-tile>
-                        <q-item-tile sublabel>
+                        </q-item-label>
+                        <q-item-label caption>
                             <timeago :datetime="tx.timestamp*1000" :auto-update="60">
                             </timeago>
-                        </q-item-tile>
+                        </q-item-label>
                     </q-item-section>
 
                     <q-context-menu>

@@ -17,8 +17,8 @@
                     <Identicon :address="wallet.address" :ref="`${index}-identicon`" />
                 </q-item-section>
                 <q-item-label>
-                    <q-item-tile label>{{ wallet.name }}</q-item-tile>
-                    <q-item-tile class="monospace ellipsis" sublabel>{{ wallet.address }}</q-item-tile>
+                    <q-item-label header>{{ wallet.name }}</q-item-label>
+                    <q-item-label class="monospace ellipsis" caption>{{ wallet.address }}</q-item-label>
                 </q-item-label>
                 <q-item-section>
                     <q-btn
