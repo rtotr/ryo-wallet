@@ -93,7 +93,7 @@
                             <q-item-label class="monospace ellipsis" caption>{{ in_tx_address_used.address }}</q-item-label>
                         </q-item-label>
 
-                        <q-context-menu>
+                        <q-menu context-menu>
                             <q-list link separator style="min-width: 150px; max-height: 300px;">
                                 <q-item v-close-overlay
                                         @click.native="copyAddress(in_tx_address_used.address, $event)">
@@ -105,7 +105,7 @@
                                     <q-item-label label="Save identicon to file" />
                                 </q-item>
                             </q-list>
-                        </q-context-menu>
+                        </q-menu>
 
                     </q-item>
                 </q-list>
@@ -125,7 +125,7 @@
                                 <q-item-label caption><FormatRyo :amount="destination.amount" /></q-item-label>
                             </q-item-label>
 
-                            <q-context-menu>
+                            <q-menu context-menu>
                                 <q-list link separator style="min-width: 150px; max-height: 300px;">
                                     <q-item v-close-overlay
                                             @click.native="copyAddress(destination.address, $event)">
@@ -137,7 +137,7 @@
                                         <q-item-label label="Save identicon to file" />
                                     </q-item>
                                 </q-list>
-                            </q-context-menu>
+                            </q-menu>
 
                         </q-item>
                     </template>

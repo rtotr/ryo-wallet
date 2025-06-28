@@ -96,7 +96,7 @@ module.exports = function (ctx) {
         'QInnerLoading',
         'QInfiniteScroll',
         'QDate',
-        'QContextMenu',
+        'QMenu',
         'QTable',
         'QTh',
         'QTr',

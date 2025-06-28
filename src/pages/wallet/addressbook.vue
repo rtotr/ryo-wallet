@@ -36,7 +36,7 @@
                     <q-icon size="24px" name="star" />
                 </q-item-section>
 
-                <q-context-menu>
+                <q-menu context-menu>
                     <q-list link separator style="min-width: 150px; max-height: 300px;">
                         <q-item v-close-overlay
                                 @click.native="details(entry)">
@@ -58,7 +58,7 @@
                             <q-item-label label="Save identicon to file" />
                         </q-item>
                     </q-list>
-                </q-context-menu>
+                </q-menu>
 
             </q-item>
             <q-item v-for="(entry, index) in address_book" @click.native="details(entry)">
@@ -82,7 +82,7 @@
                     <q-icon size="24px" name="star_border" />
                 </q-item-section>
 
-                <q-context-menu>
+                <q-menu context-menu>
                     <q-list link separator style="min-width: 150px; max-height: 300px;">
                         <q-item v-close-overlay
                                 @click.native="details(entry)">
@@ -104,7 +104,7 @@
                             <q-item-label label="Save identicon to file" />
                         </q-item>
                     </q-list>
-                </q-context-menu>
+                </q-menu>
 
             </q-item>
         </q-list>
