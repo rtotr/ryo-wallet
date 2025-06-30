@@ -1,3 +1,5 @@
+<!-- eslint-disable vue/no-unused-vars -->
+<!-- eslint-disable vue/valid-v-for -->
 <template>
 <q-dialog v-model="isVisible" maximized class="settings-modal">
     <q-layout>

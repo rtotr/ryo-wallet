@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/valid-v-for -->
 <template>
 <q-dialog v-model="isVisible" maximized>
     <q-layout>
@@ -120,7 +121,7 @@
                                 <Identicon :address="destination.address" ref="identicon" />
                             </q-item-section>
                             <q-item-label>
-                                <q-item-label header>{{ destination.name }}</q-item-label header>
+                                <q-item-label header>{{ destination.name }}</q-item-label>
                                 <q-item-label class="monospace ellipsis" caption>{{ destination.address }}</q-item-label>
                                 <q-item-label caption><FormatRyo :amount="destination.amount" /></q-item-label>
                             </q-item-label>

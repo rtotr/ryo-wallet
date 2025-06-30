@@ -1,3 +1,5 @@
+<!-- eslint-disable vue/no-unused-vars -->
+<!-- eslint-disable vue/require-v-for-key -->
 <template>
 <div class="row items-baseline q-my-xl">
     <div class="q-mr-md col-auto">
@@ -63,6 +65,8 @@ export default {
                 case 3:
                 case 4:
                     return ["rgb(139, 195, 74)", bg_color]
+                default:
+                    return ["rgb(244, 67, 54)", bg_color]
             }
         },
         score() {
