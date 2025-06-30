@@ -38,7 +38,11 @@ function createWindow() {
         height: mainWindowState.height,
         minWidth: 640,
         minHeight: 480,
-        icon: path.join(__statics, "icon_64x64.png")
+        icon: path.join(__statics, "icon_64x64.png"),
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false,
+        }
     })
 
     mainWindow.on("close", (e) => {
