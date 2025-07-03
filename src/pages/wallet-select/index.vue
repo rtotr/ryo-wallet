@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/valid-v-for -->
 <template>
 <q-page>
     <template v-if="!wallets.list.length">

@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-unused-vars -->
 <template>
 <div>
 
@@ -61,7 +62,7 @@
 const { clipboard } = require("electron")
 import { mapState } from "vuex"
 import { QSpinnerDots } from "quasar"
-import Identicon from "components/identicon"
+// import Identicon from "components/identicon"
 import TxTypeIcon from "components/tx_type_icon"
 import TxDetails from "components/tx_details"
 import FormatRyo from "components/format_ryo"
@@ -233,7 +234,7 @@ export default {
     },
     components: {
         QSpinnerDots,
-        Identicon,
+        // Identicon,
         TxTypeIcon,
         TxDetails,
         FormatRyo

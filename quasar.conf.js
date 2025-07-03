@@ -1,11 +1,32 @@
-/* eslint-disable comma-dangle */
-// Configuration for your app
+/* eslint-env node */
 
-module.exports = function (ctx) {
+/*
+ * This file runs in a Node context (it's NOT transpiled by Babel), so use only
+ * the ES6 features that are supported by your Node version. https://node.green/
+ */
+
+// Configuration for your app
+// https://v1.quasar.dev/quasar-cli/quasar-conf-js
+
+const ESLintPlugin = require('eslint-webpack-plugin')
+
+module.exports = function (/* ctx */) {
   return {
-    // app plugins (/src/boot)
+    // https://v1.quasar.dev/quasar-cli/supporting-ts
+    supportTS: false,
+
+    // https://v1.quasar.dev/quasar-cli/prefetch-feature
+    // preFetch: true,
+
+    // app boot file (/src/boot)
+    // --> boot files are part of "main.js"
+    // https://v1.quasar.dev/quasar-cli/boot-files
     boot: ['i18n', 'axios', 'vuelidate', 'gateway', 'timeago'],
+
+    // https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: ['app.styl'],
+
+    // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
       'roboto-font',
       'material-icons', // optional, you are not bound to it
@@ -13,7 +34,8 @@ module.exports = function (ctx) {
       // "6",
       // "fontawesome-v6"
     ],
-    supportIE: false,
+
+    // Full list of options: https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       scopeHoisting: true,
       vueRouterMode: 'history',
@@ -22,6 +44,14 @@ module.exports = function (ctx) {
       // analyze: true,
       // extractCSS: false,
       sourceMap: true,
+
+      // https://v1.quasar.dev/quasar-cli/handling-webpack
+      // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
+      chainWebpack (chain) {
+        chain.plugin('eslint-webpack-plugin')
+          .use(ESLintPlugin, [{ extensions: [ 'js', 'vue' ] }])
+      },
+
       extendWebpack (cfg) {
         cfg.module.rules.push({
           test: /RyoCoreCpp\.js$/,
@@ -45,12 +75,15 @@ module.exports = function (ctx) {
                 */
       },
     },
+
+    // Full list of options: https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
     devServer: {
       // https: true,
       // port: 8080,
       open: true, // opens browser window automatically
     },
-    // framework: "all" --- includes everything; for dev only!
+
+    // https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
     framework: {
       components: [
         'QLayout',
@@ -109,8 +142,17 @@ module.exports = function (ctx) {
       // iconSet: 'material-icons'
       // lang: 'de' // Quasar language
     },
-    // animations: "all" --- includes all animations
+
+    // animations: 'all', // --- includes all animations
+    // https://v1.quasar.dev/options/animations
     animations: [],
+
+    // https://v1.quasar.dev/quasar-cli/developing-ssr/configuring-ssr
+    ssr: {
+      pwa: false
+    },
+
+    // https://v1.quasar.dev/quasar-cli/developing-pwa/configuring-pwa
     pwa: {
       // workboxPluginMode: "InjectManifest",
       // workboxOptions: {},
@@ -151,11 +193,24 @@ module.exports = function (ctx) {
         ],
       },
     },
+
+    // Full list of options: https://v1.quasar.dev/quasar-cli/developing-cordova-apps/configuring-cordova
     cordova: {
       // id: "org.cordova.quasar.app"
     },
+
+    // Full list of options: https://v1.quasar.dev/quasar-cli/developing-capacitor-apps/configuring-capacitor
+    capacitor: {
+      hideSplashscreen: true
+    },
+
+    // Full list of options: https://v1.quasar.dev/quasar-cli/developing-electron-apps/configuring-electron
     electron: {
       bundler: 'builder', // or "packager"
+
+      // More info: https://v1.quasar.dev/quasar-cli/developing-electron-apps/node-integration
+      nodeIntegration: true,
+
       extendWebpack (cfg) {
         cfg.module.rules.push({
           test: /RyoCoreCpp\.js$/,

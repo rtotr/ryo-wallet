@@ -839,7 +839,6 @@ export default {
             return "Select wallet address"
         },
         settings_changed: function () {
-            this.settings.mining.uniform = !this.enableStats
             return this.currentSettings != JSON.stringify(this.settings)
         },
         cols_workers_visible: function() {
@@ -877,6 +876,9 @@ export default {
                 }
             }
         },
+        enableStats: function() {
+            this.settings.mining.uniform = !this.enableStats
+        }
     },
     methods: {
         save() {
