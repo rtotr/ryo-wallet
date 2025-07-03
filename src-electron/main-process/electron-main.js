@@ -1,16 +1,23 @@
-import { app, ipcMain, BrowserWindow, Menu, Tray, dialog } from "electron"
+import { app, ipcMain, BrowserWindow, Menu, Tray, nativeTheme } from "electron"
 import { Backend } from "./modules/backend"
 import menuTemplate from "./menu"
 import isDev from "electron-is-dev"
 const windowStateKeeper = require("electron-window-state")
 const path = require("path");
 
+try {
+    if (process.platform === 'win32' && nativeTheme.shouldUseDarkColors === true) {
+      require('fs').unlinkSync(require('path').join(app.getPath('userData'), 'DevTools Extensions'))
+    }
+  } catch (_) { }
+  
 /**
  * Set `__statics` path to static files in production;
  * The reason we are setting it here is that the path needs to be evaluated at runtime
  */
 if (process.env.PROD) {
-    global.__statics = path.join(__dirname, "statics").replace(/\\/g, "\\\\")
+    global.__statics = __dirname
+    // global.__statics = path.join(__dirname, "statics").replace(/\\/g, "\\\\")
     global.__ryo_bin = path.join(__dirname, "..", "bin").replace(/\\/g, "\\\\")
 } else {
     global.__ryo_bin = path.join(process.cwd(), "bin").replace(/\\/g, "\\\\")
