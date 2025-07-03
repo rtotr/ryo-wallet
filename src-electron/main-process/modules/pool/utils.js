@@ -1,9 +1,10 @@
 import BigInt from "big-integer"
 import dateFormat from "dateformat"
-import createWriteStream from "rotating-file-stream"
 // import { createWriteStream } from "fs"
 import { randomBytes } from "crypto"
 import { format } from "util"
+
+const rfs = require("rotating-file-stream");
 
 export const noncePattern = new RegExp("^[0-9A-Fa-f]{8}$")
 
@@ -27,7 +28,7 @@ class Logger {
 
     setLogFile(path, file) {
         // this.stream = createWriteStream(join(path, file), { flags: "a" })
-        this.stream = createWriteStream(file, {
+        this.stream = rfs.createStream(file, {
             path,
             size: "5M",
             interval: "1d",
