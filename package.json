@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.17.0",
-    "axios": "^1.2.1",
     "quasar": "^1.22.10",
     "better-sqlite3": "^12.2.0",
     "big-integer": "^1.6.41",
