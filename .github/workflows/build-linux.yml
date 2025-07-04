@@ -28,7 +28,7 @@ jobs:
           python-version: '3.10'
       - uses: actions/setup-node@v4
         with:
-          node-version: '14.21.3'
+          node-version: '18.x'
       - name: get latest ryo release tag
         run: echo "LATEST_TAG=$(gh release list --repo rtotr/ryo-currency --json tagName,isLatest --jq '.[] | select(.isLatest)|.tagName')" >> $GITHUB_ENV
       - name: download latest ryo release
@@ -48,6 +48,7 @@ jobs:
         run: npm install
       - name: build
         run: |
+          npm run rebuild
           npm run build
       - uses: actions/upload-artifact@v4
         with:
