@@ -15,10 +15,15 @@ app.whenReady().then(() => {
     // Install `electron-debug` with `devtron`
     electronDebug({ showDevTools: false })
 
+    // VUEJS_DEVTOOLS extension does not support vue 2
+    const VUEJS_DEVTOOLS_LEGACY = {
+      id: 'iaajmlceplecbljialhhkmedjlpdblhp',
+    }
+  
     // Install vuejs devtools
-    installExtension(VUEJS_DEVTOOLS)
+    installExtension(VUEJS_DEVTOOLS_LEGACY)
       .then(name => {
-        console.log(`Added Extension: ${name}`)
+        console.log(`Added Extension: ${name.name}`)
         // get main window
         const win = BrowserWindow.getFocusedWindow()
         if (win) {
