@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/require-v-for-key -->
 <template>
 <q-page padding>
 
@@ -78,7 +77,7 @@
 
         <div v-bind:class="{ row: true, 'q-pa-sm': true, 'round-borders': true, 'bg-grey-4':theme=='light', 'bg-dark':theme=='dark' }" style="min-height:48px">
             <template v-for="(word, index) in mnemonic_words_confirm">
-                <div class="col-auto q-px-xs">
+                <div class="col-auto q-px-xs" :key="index">
                     <q-chip class="non-selectable" color="primary" closable @hide="removeWord(index)">{{ word }}</q-chip>
                 </div>
             </template>
@@ -89,7 +88,7 @@
 
         <div class="row gutter-xs q-mt-md" v-if="mnemonic_words_shuffle.length">
             <template v-for="(word, index) in mnemonic_words_shuffle">
-                <div class="col-auto">
+                <div class="col-auto" :key="index">
                     <q-btn
                         no-caps
                         :label="word"

@@ -230,7 +230,7 @@
                     <div style="max-width: 650px">
                         <p>When constructing a block to be mined, pools are able to reserve a few bytes for including extra information. Pools normally use this space for adding an "extra nonce" and a unique pool identification string.</p>
                         <p>If this feature is enabled, Atom will add only a single byte to the block, which will allow the network to detect that the block was created by solo mining. From the number of blocks identified in this manner, an estimate of total solo mining hashrate can be calculated.</p>
-                        <p>Your individual hashrate, wallet address, IP address, or any other sensitive information will not be shared. The only information shared is that the blocks you mine will be able to be identified as mined by Atom. All communication is done through the blockchain and you will not send any information to a central server.<p>
+                        <p>Your individual hashrate, wallet address, IP address, or any other sensitive information will not be shared. The only information shared is that the blocks you mine will be able to be identified as mined by Atom. All communication is done through the blockchain and you will not send any information to a central server.</p>
                         <p>If this feature is disabled, Atom will construct blocks in the same way as most public pools, and will not be able to be identified as a solo mined block.</p>
 
                     </div>

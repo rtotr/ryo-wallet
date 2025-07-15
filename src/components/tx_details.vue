@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/valid-v-for -->
 <template>
 <q-dialog v-model="isVisible" maximized>
     <q-layout>
@@ -116,7 +115,7 @@
                 <q-list no-border>
                     <q-item-label header class="q-px-none">Outgoing transaction sent to:</q-item-label>
                     <template v-if="out_destinations">
-                        <q-item class="q-px-none" v-for="destination in out_destinations">
+                        <q-item class="q-px-none" v-for="destination in out_destinations" :key="destination.address">
                             <q-item-section>
                                 <Identicon :address="destination.address" ref="identicon" />
                             </q-item-section>

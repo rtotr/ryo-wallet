@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/valid-v-for -->
 <template>
 <q-page>
 
@@ -16,7 +15,7 @@
     <template v-if="address_book_starred.length || address_book.length">
         <q-list link no-border :dark="theme=='dark'">
 
-            <q-item v-for="(entry, index) in address_book_starred" @click.native="details(entry)">
+            <q-item v-for="(entry, index) in address_book_starred" :key="index" @click.native="details(entry)">
                 <q-item-section>
                     <Identicon :address="entry.address" :ref="`${index}-starredIdenticon`" />
                 </q-item-section>
@@ -62,7 +61,7 @@
                 </q-menu>
 
             </q-item>
-            <q-item v-for="(entry, index) in address_book" @click.native="details(entry)">
+            <q-item v-for="(entry, index) in address_book" :key="index" @click.native="details(entry)">
                 <q-item-section>
                     <Identicon :address="entry.address" :ref="`${index}-normalIdenticon`" />
                 </q-item-section>

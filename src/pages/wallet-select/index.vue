@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/valid-v-for -->
 <template>
 <q-page>
     <template v-if="!wallets.list.length">
@@ -9,11 +8,10 @@
         </div>
     </template>
 
-
     <q-list link no-border :dark="theme=='dark'">
         <template v-if="wallets.list.length">
             <q-item-label header>Open wallet</q-item-label>
-            <q-item v-for="(wallet, index) in wallets.list" @click.native="openWallet(wallet)">
+            <q-item v-for="(wallet, index) in wallets.list" :key="index" @click.native="openWallet(wallet)">
                 <q-item-section>
                     <Identicon :address="wallet.address" :ref="`${index}-identicon`" />
                 </q-item-section>

@@ -1,19 +1,17 @@
-<!-- eslint-disable vue/no-unused-vars -->
-<!-- eslint-disable vue/require-v-for-key -->
 <template>
 <div class="row items-baseline q-my-xl">
     <div class="q-mr-md col-auto">
         Password strength:
     </div>
     <template v-for="n in password_strength.score">
-        <div class="q-mr-xs col-auto round-borders" v-bind:style="{ backgroundColor: password_strength_color[0], width: '20px', height: '10px' }" />
+        <div class="q-mr-xs col-auto round-borders" v-bind:style="{ backgroundColor: password_strength_color[0], width: '20px', height: '10px' }" :key="'filled-' + n" />
     </template>
     <template v-for="n in 4-password_strength.score">
-        <div class="q-mr-xs col-auto round-borders" v-bind:style="{ backgroundColor: password_strength_color[1], width: '20px', height: '10px' }" />
+        <div class="q-mr-xs col-auto round-borders" v-bind:style="{ backgroundColor: password_strength_color[1], width: '20px', height: '10px' }" :key="'empty-' + n" />
     </template>
     <div class="q-ml-md col self-start">
         <ul class="q-ma-none q-pl-md absolute">
-            <li v-for="tip in password_strength_tips">{{ tip }}</li>
+            <li v-for="(tip, i) in password_strength_tips" :key="i">{{ tip }}</li>
         </ul>
     </div>
 </div>

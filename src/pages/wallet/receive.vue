@@ -1,5 +1,3 @@
-<!-- eslint-disable vue/no-unused-vars -->
-<!-- eslint-disable vue/valid-v-for -->
 <template>
 <q-page>
 
@@ -17,7 +15,7 @@
     <q-list link no-border :dark="theme=='dark'">
 
         <q-item-label header>My primary address</q-item-label>
-        <q-item v-for="(address, index) in address_list.primary" @click.native="details(address)">
+        <q-item v-for="(address, index) in address_list.primary" :key="index" @click.native="details(address)">
             <q-item-section>
                 <Identicon :address="address.address" ref="primaryIdenticon" />
             </q-item-section>
@@ -59,7 +57,7 @@
 
         <template v-if="address_list.used.length">
             <q-item-label header>My used addresses</q-item-label>
-            <q-item v-for="(address, index) in address_list.used" @click.native="details(address)">
+            <q-item v-for="(address, index) in address_list.used" :key="index" @click.native="details(address)">
                 <q-item-section>
                     <Identicon :address="address.address" :ref="`${index}-usedIdenticon`" />
                 </q-item-section>
@@ -103,7 +101,7 @@
 
         <template v-if="address_list.unused.length">
             <q-item-label header>My unused addresses</q-item-label>
-            <q-item v-for="(address, index) in address_list.unused" @click.native="details(address)">
+            <q-item v-for="(address, index) in address_list.unused" :key="index" @click.native="details(address)">
                 <q-item-section>
                     <Identicon :address="address.address" :ref="`${index}-unusedIdenticon`" />
                 </q-item-section>

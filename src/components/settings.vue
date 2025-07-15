@@ -1,5 +1,3 @@
-<!-- eslint-disable vue/no-unused-vars -->
-<!-- eslint-disable vue/valid-v-for -->
 <template>
 <q-dialog v-model="isVisible" maximized class="settings-modal">
     <q-layout>
@@ -90,7 +88,7 @@
             <q-list :dark="theme=='dark'" no-border>
                 <q-item-label header>Peer list</q-item-label>
 
-                <q-item link v-for="(entry, index) in daemon.connections" @click.native="showPeerDetails(entry)">
+                <q-item link v-for="(entry, index) in daemon.connections" :key="index" @click.native="showPeerDetails(entry)">
                     <q-item-label>
                         <q-item-label header>{{ entry.address }}</q-item-label>
                         <q-item-label caption>Height: {{ entry.height }}</q-item-label>
@@ -100,7 +98,7 @@
                 <template v-if="daemon.bans.length">
 
                     <q-item-label header>Banned peers (bans will cleared if wallet is restarted)</q-item-label>
-                    <q-item v-for="(entry, index) in daemon.bans">
+                    <q-item v-for="(entry, index) in daemon.bans" :key="index">
                         <q-item-label>
                             <q-item-label header>{{ entry.host }}</q-item-label>
                             <q-item-label caption>Banned until {{ new Date(Date.now() + entry.seconds * 1000).toLocaleString() }}</q-item-label>
