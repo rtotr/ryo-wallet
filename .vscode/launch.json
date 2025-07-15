@@ -5,13 +5,22 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "node",
-      "request": "launch",
-      "name": "Launch Program",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}\\src-electron\\main-process\\modules\\backend.js"
+      "name": "Quasar: attach to node",
+      "port": 5858,
+      "request": "attach",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+    {
+      "name": "Quasar: attach to chrome",
+      "port": 9222,
+      "request": "attach",
+      "type": "chrome",
+      "enableContentValidation": false,
+      "webRoot": "${workspaceFolder}/src",
+      "sourceMapPathOverrides": {
+        "webpack:///./src/*": "${webRoot}/*"
+      }
     }
   ]
 }

@@ -8,9 +8,9 @@
 // Configuration for your app
 // https://v1.quasar.dev/quasar-cli/quasar-conf-js
 
-const ESLintPlugin = require('eslint-webpack-plugin')
+const ESLintPlugin = require("eslint-webpack-plugin");
 
-module.exports = function (/* ctx */) {
+module.exports = function (ctx) {
   return {
     // https://v1.quasar.dev/quasar-cli/supporting-ts
     supportTS: false,
@@ -21,15 +21,15 @@ module.exports = function (/* ctx */) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://v1.quasar.dev/quasar-cli/boot-files
-    boot: ['i18n', 'vuelidate', 'gateway', 'timeago'],
+    boot: ["i18n", "vuelidate", "gateway", "timeago"],
 
     // https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
-    css: ['app.styl'],
+    css: ["app.styl"],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
-      'roboto-font',
-      'material-icons', // optional, you are not bound to it
+      "roboto-font",
+      "material-icons", // optional, you are not bound to it
       // "ionicons-v4",
       // "6",
       // "fontawesome-v6"
@@ -38,33 +38,35 @@ module.exports = function (/* ctx */) {
     // Full list of options: https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       scopeHoisting: true,
-      vueRouterMode: 'history',
+      vueRouterMode: "history",
       // vueCompiler: true,
       // gzip: true,
       // analyze: true,
       // extractCSS: false,
+      devtool: "source-map",
       sourceMap: true,
 
       // https://v1.quasar.dev/quasar-cli/handling-webpack
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
-      chainWebpack (chain) {
-        chain.plugin('eslint-webpack-plugin')
-          .use(ESLintPlugin, [{ extensions: [ 'js', 'vue' ] }])
+      chainWebpack(chain) {
+        chain
+          .plugin("eslint-webpack-plugin")
+          .use(ESLintPlugin, [{ extensions: ["js", "vue"] }]);
       },
 
-      extendWebpack (cfg) {
+      extendWebpack(cfg) {
         cfg.module.rules.push({
           test: /RyoCoreCpp\.js$/,
-          loader: 'exports-loader',
-        })
+          loader: "exports-loader",
+        });
         cfg.module.rules.push({
           test: /RyoCoreCpp\.wasm$/,
-          type: 'javascript/auto',
-          loader: 'file-loader',
+          type: "javascript/auto",
+          loader: "file-loader",
           options: {
-            name: '[name]-[hash].[ext]',
+            name: "[name]-[hash].[ext]",
           },
-        })
+        });
         /*
                 cfg.module.rules.push({
                     enforce: "pre",
@@ -81,64 +83,65 @@ module.exports = function (/* ctx */) {
       // https: true,
       // port: 8080,
       open: true, // opens browser window automatically
+      // vueDevtools: true, // this, probably, will be used after migration to vue 3
     },
 
     // https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
     framework: {
       components: [
-        'QLayout',
-        'QHeader',
-        'QFooter',
+        "QLayout",
+        "QHeader",
+        "QFooter",
         // 'QDrawer',
-        'QPageContainer',
-        'QPage',
-        'QToolbar',
-        'QToolbarTitle',
-        'QTooltip',
-        'QField',
-        'QInput',
-        'QRadio',
-        'QBtn',
-        'QBtnToggle',
-        'QIcon',
-        'QTabs',
-        'QTab',
-        'QRouteTab',
-        'QBtnDropdown',
-        'QMenu',
-        'QDialog',
-        'QLayout',
-        'QStep',
-        'QStepper',
-        'QStepperNavigation',
-        'QSpinner',
-        'QSlider',
-        'QChip',
-        'QList',
+        "QPageContainer",
+        "QPage",
+        "QToolbar",
+        "QToolbarTitle",
+        "QTooltip",
+        "QField",
+        "QInput",
+        "QRadio",
+        "QBtn",
+        "QBtnToggle",
+        "QIcon",
+        "QTabs",
+        "QTab",
+        "QRouteTab",
+        "QBtnDropdown",
+        "QMenu",
+        "QDialog",
+        "QLayout",
+        "QStep",
+        "QStepper",
+        "QStepperNavigation",
+        "QSpinner",
+        "QSlider",
+        "QChip",
+        "QList",
         // 'QListHeader',
-        'QItem',
+        "QItem",
         // 'QItemMain',
-        'QSeparator',
+        "QSeparator",
         // 'QItemSide',
         // 'QItemTile',
-        'QSelect',
-        'QToggle',
-        'QPageSticky',
-        'QExpansionItem',
-        'QCheckbox',
-        'QInnerLoading',
-        'QInfiniteScroll',
-        'QDate',
-        'QMenu',
-        'QTable',
-        'QTh',
-        'QTr',
-        'QTd',
+        "QSelect",
+        "QToggle",
+        "QPageSticky",
+        "QExpansionItem",
+        "QCheckbox",
+        "QInnerLoading",
+        "QInfiniteScroll",
+        "QDate",
+        "QMenu",
+        "QTable",
+        "QTh",
+        "QTr",
+        "QTd",
         // 'QTableColumns',
       ],
-      directives: ['Ripple', 'ClosePopup'],
+      directives: ["Ripple", "ClosePopup"],
       // Quasar plugins
-      plugins: ['Notify', 'Loading', 'LocalStorage', 'Dialog'],
+      plugins: ["Notify", "Loading", "LocalStorage", "Dialog"],
       // iconSet: 'material-icons'
       // lang: 'de' // Quasar language
     },
@@ -149,7 +152,7 @@ module.exports = function (/* ctx */) {
 
     // https://v1.quasar.dev/quasar-cli/developing-ssr/configuring-ssr
     ssr: {
-      pwa: false
+      pwa: false,
     },
 
     // https://v1.quasar.dev/quasar-cli/developing-pwa/configuring-pwa
@@ -160,35 +163,35 @@ module.exports = function (/* ctx */) {
         // name: "Quasar App",
         // short_name: "Quasar-PWA",
         // description: "Best PWA App in town!",
-        display: 'standalone',
-        orientation: 'portrait',
-        background_color: '#ffffff',
-        theme_color: '#027be3',
+        display: "standalone",
+        orientation: "portrait",
+        background_color: "#ffffff",
+        theme_color: "#027be3",
         icons: [
           {
-            src: 'statics/icons/icon-128x128.png',
-            sizes: '128x128',
-            type: 'image/png',
+            src: "statics/icons/icon-128x128.png",
+            sizes: "128x128",
+            type: "image/png",
           },
           {
-            src: 'statics/icons/icon-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
+            src: "statics/icons/icon-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
           },
           {
-            src: 'statics/icons/icon-256x256.png',
-            sizes: '256x256',
-            type: 'image/png',
+            src: "statics/icons/icon-256x256.png",
+            sizes: "256x256",
+            type: "image/png",
           },
           {
-            src: 'statics/icons/icon-384x384.png',
-            sizes: '384x384',
-            type: 'image/png',
+            src: "statics/icons/icon-384x384.png",
+            sizes: "384x384",
+            type: "image/png",
           },
           {
-            src: 'statics/icons/icon-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
+            src: "statics/icons/icon-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
           },
         ],
       },
@@ -201,29 +204,30 @@ module.exports = function (/* ctx */) {
 
     // Full list of options: https://v1.quasar.dev/quasar-cli/developing-capacitor-apps/configuring-capacitor
     capacitor: {
-      hideSplashscreen: true
+      hideSplashscreen: true,
     },
 
     // Full list of options: https://v1.quasar.dev/quasar-cli/developing-electron-apps/configuring-electron
     electron: {
-      bundler: 'builder', // or "packager"
+      bundler: "builder", // or "packager"
 
       // More info: https://v1.quasar.dev/quasar-cli/developing-electron-apps/node-integration
       nodeIntegration: true,
 
-      extendWebpack (cfg) {
+      extendWebpack(cfg) {
+        cfg.devtool = ctx.dev ? "#cheap-module-eval-source-map" : "#source-map";
         cfg.module.rules.push({
           test: /RyoCoreCpp\.js$/,
-          loader: 'exports-loader',
-        })
+          loader: "exports-loader",
+        });
         cfg.module.rules.push({
           test: /RyoCoreCpp\.wasm$/,
-          type: 'javascript/auto',
-          loader: 'file-loader',
+          type: "javascript/auto",
+          loader: "file-loader",
           options: {
-            name: '[name].[ext]',
+            name: "[name].[ext]",
           },
-        })
+        });
       },
       packager: {
         // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
@@ -237,46 +241,46 @@ module.exports = function (/* ctx */) {
         // Window only
         // win32metadata: { ... }
 
-        extraResource: ['bin'],
+        extraResource: ["bin"],
       },
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'com.ryo-currency.wallet',
-        productName: 'Ryo Wallet Atom',
-        artifactName: 'ryo-wallet.${ext}',
-        copyright: 'Copyright © 2025 Ryo Currency Project',
+        appId: "com.ryo-currency.wallet",
+        productName: "Ryo Wallet Atom",
+        artifactName: "ryo-wallet.${ext}",
+        copyright: "Copyright © 2025 Ryo Currency Project",
 
         // directories: {
         //     buildResources: "src-electron/build"
         // },
 
         linux: {
-          target: ['AppImage'],
-          icon: 'src-electron/icons/icon_512x512.png',
-          artifactName: 'ryo-wallet-linux-x64.${ext}',
-          category: 'Finance',
+          target: ["AppImage"],
+          icon: "src-electron/icons/icon_512x512.png",
+          artifactName: "ryo-wallet-linux-x64.${ext}",
+          category: "Finance",
         },
 
         win: {
-          target: ['zip'],
-          artifactName: 'ryo-wallet-win-x64.${ext}',
-          icon: 'src-electron/icons/icon.ico',
+          target: ["zip"],
+          artifactName: "ryo-wallet-win-x64.${ext}",
+          icon: "src-electron/icons/icon.ico",
         },
 
         mac: {
-          target: ['dmg'],
-          icon: 'src-electron/icons/icon.icns',
-          artifactName: 'ryo-wallet-mac-arm64.${ext}',
-          category: 'public.app-category.finance',
+          target: ["dmg"],
+          icon: "src-electron/icons/icon.icns",
+          artifactName: "ryo-wallet-mac-arm64.${ext}",
+          category: "public.app-category.finance",
         },
 
         dmg: {
-          background: 'src-electron/build/ryo-dmg.tiff',
+          background: "src-electron/build/ryo-dmg.tiff",
         },
 
-        extraResources: ['bin'],
+        extraResources: ["bin"],
       },
     },
-  }
+  };
 };
